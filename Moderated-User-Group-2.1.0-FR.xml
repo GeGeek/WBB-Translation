@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="fr">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.groupType"><![CDATA[Type de groupe]]></item>
+		<item name="wcf.acp.group.groupType.description"><![CDATA[Veuillez sélectionner le type du groupe:
+<ul class="nativeList">
+	<li>Fermé: Seuls les Administrateurs peuvent y ajouter des membres</li>
+	<li>Ouvert: Chaque membre est libre de rejoindre ou quitter le groupe</li>
+	<li>Modéré: Les membres peuvent rejoindre le groupe sur demande (qui doit être acceptée), mais peuvent le quitter librement</li>
+	<li>Modéré clos: Les membres peuvent rejoindre le groupe sur demande (qui doit être acceptée), et ne peuvent le quitter d’eux-même</li>
+</ul>]]></item>
+		<item name="wcf.acp.group.groupType.type4"><![CDATA[Clos]]></item>
+		<item name="wcf.acp.group.groupType.type5"><![CDATA[Ouvert]]></item>
+		<item name="wcf.acp.group.groupType.type6"><![CDATA[Modéré]]></item>
+		<item name="wcf.acp.group.groupType.type7"><![CDATA[Modéré clos]]></item>
+		<item name="wcf.acp.group.leader"><![CDATA[Responsables du groupe]]></item>
+		<item name="wcf.acp.group.leader.description"><![CDATA[Vous pouvez assigner un ou plusieurs responsables à ce groupe (séparés par une virgule). Ils peuvent accepter les demandes d’adhésion et ajouter des membres dans le groupe.]]></item>
+		<item name="wcf.acp.group.leader.error.empty"><![CDATA[Un groupe modéré ou clos requiert un responsable minimum.]]></item>
+		<item name="wcf.acp.group.leader.error.notFound"><![CDATA[Impossible de trouver {if $unknownLeader|count == 1}le membre{else}les membres{/if}: <ul class="inlineDataList">{foreach from=$unknownLeader item=username}<li>“{$username}”</li>{/foreach}</ul>.]]></item>
+		<item name="wcf.acp.group.moderatedUserGroup"><![CDATA[Groupe d’utilisateurs modéré]]></item>
+	</category>
+	<category name="wcf.page">
+		<item name="wcf.page.category.com.woltlab.wcf.moderatedUserGroup"><![CDATA[Groupes d’utilisateurs modérés]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.ModeratedUserGroupListPage"><![CDATA[Gestion des groupes]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupApplicationEditForm"><![CDATA[Editer l'application]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupApplyForm"><![CDATA[Application]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupListPage"><![CDATA[Groupes d'utilisateurs]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupManageApplicationEditForm"><![CDATA[Editer l'application en tant que responsable du groupe]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupManageApplicationListPage"><![CDATA[Applications]]></item>
+		<item name="wcf.page.com.woltlab.wcf.moderatedUserGroup.UserGroupManageMemberListPage"><![CDATA[Membres]]></item>
+	</category>
+	<category name="wcf.user.menu">
+		<item name="wcf.user.menu.accessibleUserGroups"><![CDATA[Groupes accessibles]]></item>
+		<item name="wcf.user.menu.moderatedUserGroups"><![CDATA[Gestion de groupe]]></item>
+		<item name="wcf.user.menu.userGroups"><![CDATA[Groupes d’utilisateurs]]></item>
+	</category>
+	<category name="wcf.user.moderatedUserGroups">	
+		<item name="wcf.user.moderatedUserGroups"><![CDATA[Gestion de groupe]]></item>
+		<item name="wcf.user.moderatedUserGroups.applications"><![CDATA[Demandes d’adhésion]]></item>
+		<item name="wcf.user.moderatedUserGroups.isMember"><![CDATA[Membre]]></item>
+		<item name="wcf.user.moderatedUserGroups.members"><![CDATA[Membres]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.add"><![CDATA[Ajouter un membre]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.add.description"><![CDATA[Entrez le nom d’utilisateur et appuyez sur Entrer.]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.add.error.alreadyMember"><![CDATA[Ce membre fait déjà partie de ce groupe.]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.add.error.notFound"><![CDATA[Impossible de trouver le membre.]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.add.success"><![CDATA[Le membre a bien été ajouté.]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.kick"><![CDATA[Retirer]]></item>
+		<item name="wcf.user.moderatedUserGroups.members.kick.sure"><![CDATA[Souhaitez-vous vraiment retirer “{$user->username}” de ce groupe ?]]></item>
+		<item name="wcf.user.moderatedUserGroups.noApplications"><![CDATA[Il n’y a aucune demande d’adhésion en attente.]]></item>
+	</category>
+	<category name="wcf.user.notification">
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application"><![CDATA[Groupes d’utilisateurs modérés]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.created"><![CDATA[Nouvelle demande d’adhésion]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.created.mail"><![CDATA[{@$author->username} a fait une demande d’adhésion pour le groupe d’utilisateurs "{@$group->groupName|language}":
+{link controller='UserGroupManageApplicationEdit' id=$application->applicationID isEmail=true}{/link}]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.created.title"><![CDATA[Nouvelle demande d’adhésion]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.created.message"><![CDATA[A fait une demande d’adhésion pour le groupe d’utilisateurs “{$group->groupName|language}”.]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.edited"><![CDATA[Demande d’adhésion traitée]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.edited.title"><![CDATA[Demande d’adhésion {if $newStatus == 'accepted'}acceptée{elseif $newStatus == 'rejected'}refusée{else}fermée{/if}]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.edited.message"><![CDATA[Votre demande d’adhésion pour le groupe “{$group->groupName|language}” a été {if $newStatus == 'accepted'}acceptée{elseif $newStatus == 'rejected'}refusée{else}fermée{/if}.]]></item>
+		<item name="wcf.user.notification.com.woltlab.wcf.moderatedUserGroup.application.edited.mail"><![CDATA["{@$author->username}" a {if $newStatus == 'accepted'}accepté{elseif $newStatus == 'rejected'}refusé{else}fermé{/if} votre demande d’adhésion pour le groupe d’utilisateurs "{@$group->groupName|language}".]]></item>
+	</category>
+	<category name="wcf.user.userGroups">
+		<item name="wcf.user.userGroups"><![CDATA[Groupes d’utilisateurs]]></item>
+		<item name="wcf.user.userGroups.application.edit"><![CDATA[Modifier ma demande]]></item>
+		<item name="wcf.user.userGroups.application.log"><![CDATA[Registre]]></item>
+		<item name="wcf.user.userGroups.application.log.action"><![CDATA[Action]]></item>
+		<item name="wcf.user.userGroups.application.log.changeStatus"><![CDATA[A modifié l’état à “{lang}wcf.user.userGroups.application.status.status{@$additionalData[newStatus]}{/lang}”]]></item>
+		<item name="wcf.user.userGroups.application.log.editReason"><![CDATA[A modifié le motif]]></item>
+		<item name="wcf.user.userGroups.application.log.editReply"><![CDATA[A modifié la réponse]]></item>
+		<item name="wcf.user.userGroups.application.log.time"><![CDATA[Date]]></item>
+		<item name="wcf.user.userGroups.application.reply"><![CDATA[Réponse]]></item>
+		<item name="wcf.user.userGroups.application.revoke"><![CDATA[Annuler ma demande]]></item>
+		<item name="wcf.user.userGroups.application.revoke.sure"><![CDATA[Souhaitez-vous vraiment annuler votre demande d’adhésion au groupe “{$group->groupName|language}” ?]]></item>
+		<item name="wcf.user.userGroups.application.status"><![CDATA[État]]></item>
+		<item name="wcf.user.userGroups.application.status.status0"><![CDATA[En attente]]></item>
+		<item name="wcf.user.userGroups.application.status.status1"><![CDATA[En traitement]]></item>
+		<item name="wcf.user.userGroups.application.status.status2"><![CDATA[Acceptée]]></item>
+		<item name="wcf.user.userGroups.application.status.status3"><![CDATA[Refusée]]></item>
+		<item name="wcf.user.userGroups.application.status.status5"><![CDATA[Fermée]]></item>
+		<item name="wcf.user.userGroups.application.time"><![CDATA[Dernière modification]]></item>
+		<item name="wcf.user.userGroups.apply"><![CDATA[Demande d’adhésion]]></item>
+		<item name="wcf.user.userGroups.apply.applicationInformation"><![CDATA[Détails de la demande d’adhésion]]></item>
+		<item name="wcf.user.userGroups.apply.groupInformation"><![CDATA[Détails du groupe]]></item>
+		<item name="wcf.user.userGroups.apply.reason"><![CDATA[Motif]]></item>
+		<item name="wcf.user.userGroups.join"><![CDATA[Rejoindre le groupe]]></item>
+		<item name="wcf.user.userGroups.leave"><![CDATA[Quitter le groupe]]></item>
+		<item name="wcf.user.userGroups.leave.sure"><![CDATA[Souhaitez-vous vraiment quitter le groupe “{$group->groupName|language}” ?]]></item>
+	</category>
+</language>
