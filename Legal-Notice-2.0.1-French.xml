@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="fr">
+<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.legalNotice"><![CDATA[Mentions légales]]></item>
+		<item name="wcf.acp.option.category.legalNotice.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_additional_text"><![CDATA[Informations supplémentaires]]></item>
+		<item name="wcf.acp.option.legal_notice_additional_text.description"><![CDATA[Vous pouvez ajouter toutes mentions supplémentaires souhaitées.]]></item>
+		<item name="wcf.acp.option.legal_notice_additional_text_enable_html"><![CDATA[Convertir le code HTML]]></item>
+		<item name="wcf.acp.option.legal_notice_additional_text_enable_html.description"><![CDATA[Permet l’utilisation de code HTML.]]></item>
+		<item name="wcf.acp.option.legal_notice_address"><![CDATA[Nom et adresse]]></item>
+		<item name="wcf.acp.option.legal_notice_address.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_email_address"><![CDATA[Adresse mail]]></item>
+		<item name="wcf.acp.option.legal_notice_email_address.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_fax"><![CDATA[Fax]]></item>
+		<item name="wcf.acp.option.legal_notice_fax.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_phone"><![CDATA[Téléphone]]></item>
+		<item name="wcf.acp.option.legal_notice_phone.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_register"><![CDATA[Enregistrement]]></item>
+		<item name="wcf.acp.option.legal_notice_register.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_representative"><![CDATA[Représentants]]></item>
+		<item name="wcf.acp.option.legal_notice_representative.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.legal_notice_vat_id"><![CDATA[N° TVA]]></item>
+		<item name="wcf.acp.option.legal_notice_vat_id.description"><![CDATA[]]></item>
+	</category>
+	<category name="wcf.footer.menu">
+		<item name="wcf.footer.menu.legalNotice"><![CDATA[Mentions légales]]></item>
+	</category>
+	<category name="wcf.legalNotice">
+		<item name="wcf.legalNotice.additionalText"><![CDATA[Informations supplémentaires]]></item>
+		<item name="wcf.legalNotice.address"><![CDATA[Nom et adresse]]></item>
+		<item name="wcf.legalNotice.description"><![CDATA[]]></item>
+		<item name="wcf.legalNotice.emailAddress"><![CDATA[Adresse mail]]></item>
+		<item name="wcf.legalNotice.fax"><![CDATA[Fax]]></item>
+		<item name="wcf.legalNotice.general"><![CDATA[Informations générales]]></item>
+		<item name="wcf.legalNotice.phone"><![CDATA[Téléphone]]></item>
+		<item name="wcf.legalNotice.register"><![CDATA[Enregistrement]]></item>
+		<item name="wcf.legalNotice.representative"><![CDATA[Représentants]]></item>
+		<item name="wcf.legalNotice.title"><![CDATA[Mentions légales]]></item>
+		<item name="wcf.legalNotice.vatID"><![CDATA[N° TVA]]></item>
+	</category>
+</language>
