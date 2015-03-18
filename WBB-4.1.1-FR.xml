@@ -4031,7 +4031,7 @@ Si vous ne souhaitez plus recevoir de courriel pour ce type de notification, vou
 		<item name="wcf.user.notification.mailNotificationType.daily"><![CDATA[Courriel journalier]]></item>
 		<item name="wcf.user.notification.mailNotificationType.instant"><![CDATA[Courriel instantané]]></item>
 		<item name="wcf.user.notification.mailNotificationType.none"><![CDATA[Pas de courriel]]></item>
-		<item name="wcf.user.notification.mailNotificationType.notSupported"><![CDATA[Email Notifications are not supported.]]></item>
+		<item name="wcf.user.notification.mailNotificationType.notSupported"><![CDATA[Les emails de notification ne sont pas supportés.]]></item>
 		<item name="wcf.user.notification.markAllAsConfirmed"><![CDATA[Supprimer les notifications]]></item>
 		<item name="wcf.user.notification.markAllAsConfirmed.confirmMessage"><![CDATA[Souhaitez-vous vraiment supprimer toutes les notifications ?]]></item>
 		<item name="wcf.user.notification.markAsConfirmed"><![CDATA[Supprimer]]></item>
