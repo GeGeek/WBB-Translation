@@ -2665,7 +2665,7 @@ Les erreurs sont:
 		<item name="wcf.condition.greaterThan.error.lessThan"><![CDATA[Les valeurs “plus petit que” et “plus grand que” sont en conflit.]]></item>
 		<item name="wcf.condition.greaterThan.error.maxValue"><![CDATA[La valeur “plus grand que” ne doit pas être plus grande que {#$maxValue}.]]></item>
 		<item name="wcf.condition.greaterThan.error.minValue"><![CDATA[La valeur “plus grand que” ne doit pas être plus petit que {#$minValue}.]]></item>
-		<item name="wcf.condition.lessThan"><![CDATA[less than]]></item>
+		<item name="wcf.condition.lessThan"><![CDATA[plus petit que]]></item>
 		<item name="wcf.condition.lessThan.error.maxValue"><![CDATA[The “less than” value may not be greater than {#$maxValue}.]]></item>
 		<item name="wcf.condition.lessThan.error.minValue"><![CDATA[The “less than” value may not be less than {#$minValue}.]]></item>
 	</category>
