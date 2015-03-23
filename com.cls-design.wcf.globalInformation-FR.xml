@@ -6,33 +6,68 @@
 		<item name="wcf.acp.group.option.user.globalInformation.canSee"><![CDATA[Peut voir l'information globale]]></item>
 		<item name="wcf.acp.group.option.user.globalInformation.sidebarBoxesTop.canSee"><![CDATA[Peut voir les informations globales en haut du panneau patéral]]></item>
 		<item name="wcf.acp.group.option.user.globalInformation.sidebarBoxesBottom.canSee"><![CDATA[Peut voir les informations globales en bas du panneau patéral]]></item>
+		<item name="wcf.acp.group.option.user.globalInformation.dashboard.canSee"><![CDATA[Peut voir les informations globales sur le tableau de bord]]></item>
 	</category>
 
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.globalInformation"><![CDATA[Informations Globales]]></item>
 		<item name="wcf.acp.option.category.globalInformation.general"><![CDATA[Le contenu]]></item>
+		<item name="wcf.acp.option.category.globalInformation.generalGuest"><![CDATA[Informations pour les invités]]></item>
+		<item name="wcf.acp.option.category.globalInformation.dashboard"><![CDATA[Tableau de bord]]></item>
 		<item name="wcf.acp.option.category.globalInformation.sidebarBoxesTop"><![CDATA[Haut du panneau latéral]]></item>
 		<item name="wcf.acp.option.category.globalInformation.sidebarBoxesBottom"><![CDATA[Bas du panneau latéral]]></item>
 		<item name="wcf.acp.option.global_information_text_enable"><![CDATA[Afficher les informations globales sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_text_enable.description"><![CDATA[Par défaut, les informations globales sont affichées uniquement sur ​​l'index des forums]]></item>
 		<item name="wcf.acp.option.global_information_text_enable_global"><![CDATA[Afficher les informations globales sur tout le site]]></item>
 		<item name="wcf.acp.option.global_information_text"><![CDATA[Texte]]></item>
 		<item name="wcf.acp.option.global_information_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>
 		<item name="wcf.acp.option.global_information_text_color"><![CDATA[Couleur de fond]]></item>
+		<item name="wcf.acp.option.global_information_text_color.description"><![CDATA[Si aucune couleur de fond n'est sélectionnée, les informations globales peuvent être appelées par la classe CSS .gobalInformationContent]]></item>
 		<item name="wcf.acp.option.global_information_text_color_blue"><![CDATA[Bleu]]></item>
 		<item name="wcf.acp.option.global_information_text_color_green"><![CDATA[Vert]]></item>
 		<item name="wcf.acp.option.global_information_text_color_yellow"><![CDATA[Jaune]]></item>
 		<item name="wcf.acp.option.global_information_text_color_red"><![CDATA[Rouge]]></item>
 		<item name="wcf.acp.option.global_information_text_color_none"><![CDATA[Aucune couleur]]></item>
-		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable"><![CDATA[Afficher les informations globales sur le haut du panneau latéral sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_guestText_enable"><![CDATA[Afficher les informations pour les invités sur l'index des forums]]></item>
+		<item name="wcf.acp.option.global_information_guestText_enable_global"><![CDATA[Afficher les informations pour les invités sur tout le site]]></item>
+		<item name="wcf.acp.option.global_information_guestText_enable_global-description"><![CDATA[Par défaut, les informations pour les invités ne s'affichent que sur l'index des forums]]></item>
+		<item name="wcf.acp.option.global_information_guestText"><![CDATA[Texte]]></item>
+		<item name="wcf.acp.option.global_information_guestText.description"><![CDATA[Si vous laissez ce champ vide, un texte d'exemple invitant à s'enregistrer sera automatiquement affiché]]></item>
+		<item name="wcf.acp.option.global_information_guestText_enable_html"><![CDATA[Utilisez le code HTML dans le texte]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color"><![CDATA[Couleur de fond]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color.description"><![CDATA[Si aucune couleur de fond n'est sélectionnée, les informations globales peuvent être appelées par la classe CSS .gobalInformationGuestContent]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color_blue"><![CDATA[Bleu]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color_green"><![CDATA[Vert]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color_yellow"><![CDATA[Jaune]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color_red"><![CDATA[Rouge]]></item>
+		<item name="wcf.acp.option.global_information_guestText_color_none"><![CDATA[Aucune couleur]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_enable"><![CDATA[Afficher l'information sur le tableau de bord]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_enable.description"><![CDATA[L'information est uniquement affichée sur le tableau de bord]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext"><![CDATA[Texte]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color"><![CDATA[Couleur de fond]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color.description"><![CDATA[Si aucune couleur de fond n'est sélectionnée, les informations globales peuvent être appelées par la classe CSS .gobalInformationDashboard.]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color_blue"><![CDATA[Bleu]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color_green"><![CDATA[vert]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color_yellow"><![CDATA[Jaune]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color_red"><![CDATA[Rouge]]></item>
+		<item name="wcf.acp.option.global_information_dashboardtext_color_none"><![CDATA[Aucune couleur]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable"><![CDATA[Afficher les informations globales sur le haut du panneau latéral sur l'index des forums]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable.description"><![CDATA[Par défaut, les informations sont affichées uniquement sur ​​l'index des forums]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable_global"><![CDATA[Afficher les informations globales sur le haut du panneau latéral sur tout le site]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxestop_title"><![CDATA[Titre de boîte]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxestop_text"><![CDATA[Contenu de la boîte]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>
-		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable"><![CDATA[Afficher les informations globales sur le bas du panneau latéral sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable"><![CDATA[Afficher les informations globales sur le bas du panneau latéral sur l'index des forums]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable.description"><![CDATA[Par défaut, les informations sont affichées uniquement sur ​​l'index des forums]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable_global"><![CDATA[Afficher les informations globales sur le bas du panneau latéral sur tout le site]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxesbottom_title"><![CDATA[Titre de boîte]]></item>
 		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text"><![CDATA[Contenu de la boîte]]></item>
-		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>		
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>			
 	</category>	
+
+	<category name="wcf.globalInformation">
+		<item name="wcf.globalInformation.guestInformation"><![CDATA[Pour utiliser toutes les fonctions de cette page, vous devez vous <a href="index.php/Disclaimer/">enregistrer</a>. Aujourd'hui, avant que d'autres soient plus rapides que vous!]]></item>
+	</category>
 
 </language>
