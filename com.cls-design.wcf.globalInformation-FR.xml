@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="fr">
+
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.globalInformation"><![CDATA[Informations Globales]]></item>
+		<item name="wcf.acp.group.option.user.globalInformation.canSee"><![CDATA[Peut voir l'information globale]]></item>
+		<item name="wcf.acp.group.option.user.globalInformation.sidebarBoxesTop.canSee"><![CDATA[Peut voir les informations globales en haut du panneau patéral]]></item>
+		<item name="wcf.acp.group.option.user.globalInformation.sidebarBoxesBottom.canSee"><![CDATA[Peut voir les informations globales en bas du panneau patéral]]></item>
+	</category>
+
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.globalInformation"><![CDATA[Informations Globales]]></item>
+		<item name="wcf.acp.option.category.globalInformation.general"><![CDATA[Le contenu]]></item>
+		<item name="wcf.acp.option.category.globalInformation.sidebarBoxesTop"><![CDATA[Haut du panneau latéral]]></item>
+		<item name="wcf.acp.option.category.globalInformation.sidebarBoxesBottom"><![CDATA[Bas du panneau latéral]]></item>
+		<item name="wcf.acp.option.global_information_text_enable"><![CDATA[Afficher les informations globales sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_text_enable_global"><![CDATA[Afficher les informations globales sur tout le site]]></item>
+		<item name="wcf.acp.option.global_information_text"><![CDATA[Texte]]></item>
+		<item name="wcf.acp.option.global_information_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>
+		<item name="wcf.acp.option.global_information_text_color"><![CDATA[Couleur de fond]]></item>
+		<item name="wcf.acp.option.global_information_text_color_blue"><![CDATA[Bleu]]></item>
+		<item name="wcf.acp.option.global_information_text_color_green"><![CDATA[Vert]]></item>
+		<item name="wcf.acp.option.global_information_text_color_yellow"><![CDATA[Jaune]]></item>
+		<item name="wcf.acp.option.global_information_text_color_red"><![CDATA[Rouge]]></item>
+		<item name="wcf.acp.option.global_information_text_color_none"><![CDATA[Aucune couleur]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable"><![CDATA[Afficher les informations globales sur le haut du panneau latéral sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable_global"><![CDATA[Afficher les informations globales sur le haut du panneau latéral sur tout le site]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_title"><![CDATA[Titre de boîte]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text"><![CDATA[Contenu de la boîte]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxestop_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable"><![CDATA[Afficher les informations globales sur le bas du panneau latéral sur l'index du forum]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable_global"><![CDATA[Afficher les informations globales sur le bas du panneau latéral sur tout le site]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_title"><![CDATA[Titre de boîte]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text"><![CDATA[Contenu de la boîte]]></item>
+		<item name="wcf.acp.option.global_information_sidebarboxesbottom_text_enable_html"><![CDATA[Utiliser le code HTML dans le texte]]></item>		
+	</category>	
+
+</language>
