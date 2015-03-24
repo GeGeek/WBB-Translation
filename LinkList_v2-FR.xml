@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd"
+	languagecode="fr">
+	<category name="linklist.pageMenu">
+		<item name="linklist.pageMenu.index"><![CDATA[Liens]]></item>
+	</category>
+	<category name="linklist.index">
+		<item name="linklist.index.copyright"><![CDATA[<address class="copyright marginTop"><a href="http://codequake.de" title="">Software: <strong>Linklist {@PACKAGE_VERSION}</strong>, developed by <strong>codeQuake</strong></a></address>]]></item>
+		<item name="linklist.index.title"><![CDATA[Liens]]></item>
+		<item name="linklist.index.stats"><![CDATA[Statistiques]]></item>
+		<item name="linklist.index.usersOnline.record"><![CDATA[{if LINKLIST_USERS_ONLINE_RECORD > 0}- Record: {#LINKLIST_USERS_ONLINE_RECORD} Utilisateurs ({@LINKLIST_USERS_ONLINE_RECORD_TIME|time}){/if}]]></item>
+		<item name="linklist.index.stats.detail"><![CDATA[{#$stats[members]} Membre{if $stats[members] != 1}s{/if} - {#$stats[links]} {if $stats[links] == 1}Lien{else}Liens{/if} ({#$stats.linksPerDay} {if $stats[linksPerDay] == 1}Lien{else}Liens{/if} par jour)<br />
+Le nouveau membre est: <a href="{link controller='User' object=$stats[newestMember]}{/link}" class="userLink" data-user-id="{@$stats[newestMember]->userID}">{$stats[newestMember]->username}</a>.]]></item>
+	</category>
+
+	<category name="linklist.category">
+		<item name="linklist.category.searchAll"><![CDATA[Chercher toutes les catégories]]></item>
+		<item name="linklist.category.search"><![CDATA[Chercher dans la catégorie actuelle]]></item>
+		<item name="linklist.category.displayOptions"><![CDATA[Vue]]></item>
+		<item name="linklist.category.sortBy"><![CDATA[Options de tri]]></item>
+	</category>
+
+	<category name="linklist.link">
+		<item name="linklist.link.list"><![CDATA[Liens]]></item>
+		<item name="linklist.link.markAllAsRead"><![CDATA[Marquer tous les liens comme lus]]></item>
+		<item name="linklist.link.delete.sure"><![CDATA[Souhaitez-vous vraiment supprimer ce lien?]]></item>
+		<item name="linklist.link.general"><![CDATA[Information générale]]></item>
+		<item name="linklist.link.category.categories"><![CDATA[Catégories]]></item>
+		<item name="linklist.link.category.main"><![CDATA[Catégorie principale]]></item>
+		<item name="linklist.link.category.categories.description"><![CDATA[]]></item>
+		<item name="linklist.link.categorizedLink"><![CDATA[Lien est {$category->getTitle()}]]></item>
+		<item name="linklist.link.teaser"><![CDATA[Aperçu]]></item>
+		<item name="linklist.link.teaser.description"><![CDATA[Un aperçu est une description courte du lien. Laissez le vide pour générer automatiquement un aperçu]]></item>
+		<item name="linklist.link.title"><![CDATA[Titre]]></item>
+		<item name="linklist.link.clicks"><![CDATA[Clics]]></item>
+		<item name="linklist.link.visits"><![CDATA[Visites]]></item>
+		<item name="linklist.link.time"><![CDATA[Temps]]></item>
+		<item name="linklist.link.url.illegalURL"><![CDATA[Entrez une URL valide!]]></item>
+		<item name="linklist.link.log"><![CDATA[Journal des modifications]]></item>
+		<item name="linklist.link.log.link.offline"><![CDATA[Marquer comme hors ligne]]></item>
+		<item name="linklist.link.log.title"><![CDATA[Changements pour {$link->getTitle()}]]></item>
+		<item name="linklist.link.log.link.trash"><![CDATA[Déplacé à la corbeille]]></item>
+		<item name="linklist.link.log.link.restore"><![CDATA[Restauré]]></item>
+		<item name="linklist.link.log.link.disable"><![CDATA[Désactivé]]></item>
+		<item name="linklist.link.log.link.enable"><![CDATA[Activaté]]></item>
+		<item name="linklist.link.log.noEntries"><![CDATA[Aucun changement enregistré pour ce lien.]]></item>
+		<item name="linklist.link.log.link.edit"><![CDATA[Edité]]></item>
+		<item name="linklist.link.log.action"><![CDATA[Action]]></item>
+		<item name="linklist.link.add"><![CDATA[Ajouter un lien]]></item>
+		<item name="linklist.link.linkAdd.username"><![CDATA[Nom d’utilisateur]]></item>
+		<item name="linklist.link.linkEdit"><![CDATA[Editer un lien]]></item>
+		<item name="linklist.link.linkAdd"><![CDATA[Ajouter un lien]]></item>
+		<item name="linklist.link.author"><![CDATA[Auteur]]></item>
+		<item name="linklist.link.image"><![CDATA[Image d’aperçu]]></item>
+		<item name="linklist.link.image.notValid"><![CDATA[Aucune image fournie!]]></item>
+		<item name="linklist.link.deleted"><![CDATA[Ce lien est supprimé.]]></item>
+		<item name="linklist.link.disabled"><![CDATA[Ce lien n’est pas actif.]]></item>
+		<item name="linklist.link.comments"><![CDATA[Commentaires]]></item>
+		<item name="linklist.link.image.screenshotService"><![CDATA[Utiliser un service web]]></item>
+		<item name="linklist.link.image.screenshotService.description"><![CDATA[<b>Recommendé:</b> Utiliser le service <a href="http://webthumbnail.org/">webthumbnail.org</a> pour les vignettes.]]></item>
+		<item name="linklist.link.image.upload"><![CDATA[Envoyer un aperçu]]></item>
+		<item name="linklist.link.image.link"><![CDATA[Lien de l’aperçu]]></item>
+		<item name="linklist.link.image.link.description"><![CDATA[La vignette peut être trouvée sous le lien suivant:]]></item>
+		<item name="linklist.link.sidebar.info"><![CDATA[Information]]></item>
+		<item name="linklist.link.sidebar.title"><![CDATA[Titre]]></item>
+		<item name="linklist.link.sidebar.author"><![CDATA[Ajouté par]]></item>
+		<item name="linklist.link.sidebar.category"><![CDATA[Catégorie]]></item>
+		<item name="linklist.link.sidebar.visits"><![CDATA[Visites]]></item>
+		<item name="linklist.link.sidebar.visit"><![CDATA[Visiter le site web!]]></item>
+		<item name="linklist.link.tabs.link"><![CDATA[Lien]]></item>
+		<item name="linklist.link.visit"><![CDATA[Visiter le site web!]]></item>
+		<item name="linklist.link.edit"><![CDATA[Editer le lien]]></item>
+		<item name="linklist.link.offline"><![CDATA[Hors ligne]]></item>
+		<item name="linklist.link.log"><![CDATA[Journal des changements]]></item>
+		<item name="linklist.link.linkAdd.data"><![CDATA[Donnée]]></item>
+		<item name="linklist.link.linkEdit.data"><![CDATA[Données]]></item>
+		<item name="linklist.link.linkAdd.category"><![CDATA[Catégorie]]></item>
+		<item name="linklist.link.linkAdd.title"><![CDATA[Titre]]></item>
+		<item name="linklist.link.linkEdit.title"><![CDATA[Titre]]></item>
+		<item name="linklist.link.linkAdd.url"><![CDATA[URL]]></item>
+		<item name="linklist.link.linkEdit.url"><![CDATA[URL]]></item>
+		<item name="linklist.link.linkAdd.text"><![CDATA[Message]]></item>
+		<item name="linklist.link.linkEdit.text"><![CDATA[Message]]></item>
+		<item name="linklist.link.comments.noEntries"><![CDATA[Aucun commentaire]]></item>
+		<item name="linklist.link.links"><![CDATA[Liens]]></item>
+		<item name="linklist.link.comment.notification.title"><![CDATA[Nouveau commentaire (lien)]]></item>
+		<item name="linklist.link.comment.notification.message"><![CDATA[A commenté votre lien “{$link->subject}”.]]></item>
+		<item name="linklist.link.comment.notification.mail">
+	<![CDATA[{@$author->username} a commenté votre lien "{@$link->subject}":
+{link application='linklist' controller='Link' object=$link encode=false forceFrontend=true}#comments{/link}]]>
+		</item>
+		<item name="linklist.link.commentResponse.notification.title"><![CDATA[Nouvelle réponse (link)]]></item>
+		<item name="linklist.link.commentResponse.notification.message"><![CDATA[A répondu à votre commentaire sur le lien “{$link->subject}”.]]></item>
+		<item name="linklist.link.commentResponse.notification.mail">
+	<![CDATA[{@$author->username} a répondu à votre commentaire sur le lien "{@$link->subject}":
+{link application='linklist' controller='Link' object=$link encode=false forceFrontend=true}#comments{/link}]]>
+		</item>
+		<item name="linklist.link.commentResponseOwner.notification.title"><![CDATA[Nouvelle réponse (lien)]]></item>
+		<item name="linklist.link.commentResponseOwner.notification.message"><![CDATA[A répondu au commentaire de “{$commentAuthor->username}” sur le lien “{$link->subject}”.]]></item>
+		<item name="linklist.link.commentResponseOwner.notification.mail">
+	<![CDATA[{@$author->username} a répondu au commentaire de "{@$commentAuthor->username}" sur le lien "{@$link->subject}":
+{link application='linklist' controller='Link' object=$link encode=false forceFrontend=true}#comments{/link}]]>
+		</item>
+	</category>
+
+	<category name="linklist.search">
+		<item name="linklist.search.categories.all"><![CDATA[Toutes les catégories]]></item>
+	</category>
+
+	<category name="linklist.acp.menu">
+		<item name="linklist.acp.menu.link.linklist.category"><![CDATA[Linklist]]></item>
+		<item name="linklist.acp.menu.link.linklist.category.add"><![CDATA[Add Category]]></item>
+		<item name="linklist.acp.menu.link.linklist.category.list"><![CDATA[List Categories]]></item>
+		<item name="linklist.acp.menu.link.linklist.category.data.import"><![CDATA[Import/Export]]></item>
+	</category>
+
+	<category name="linklist.acp">
+		<item name="linklist.acp.import"><![CDATA[Import/Export]]></item>
+		<item name="linklist.acp.import.sourcefile"><![CDATA[Upload Archive]]></item>
+		<item name="linklist.acp.export"><![CDATA[To save your current data, please click <a href="{link controller='LinklistExport' application='linklist'}{/link}">here</a>.]]></item>
+		<item name="linklist.acp.category.isMainCategory"><![CDATA[Category is main category]]></item>
+		<item name="linklist.acp.category.isMainCategory.description"><![CDATA[You can't add links to it, if it's a main category.]]></item>
+		<item name="linklist.acp.category.icon"><![CDATA[Icon]]></item>
+		<item name="linklist.acp.category.icon.description"><![CDATA[You can enter a name of a <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/">Font-Awesome-Icon</a> for this category. You must not enter the prefix "icon".  e.g.: "beaker" for <span class="icon icon16 icon-beaker"></span>]]></item>
+	</category>
+
+	<category name="linklist.link.menu">
+		<item name="linklist.link.menu.show"><![CDATA[Lien]]></item>
+		<item name="linklist.link.menu.comment"><![CDATA[Commentaires]]></item>
+	</category>
+	<category name="wcf.like">
+		<item name="wcf.like.objectType.de.codequake.linklist.likeableLink"><![CDATA[Lien]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.linklist.general"><![CDATA[General]]></item>
+		<item name="wcf.acp.option.category.linklist.general.settings"><![CDATA[Settings]]></item>
+		<item name="wcf.acp.option.linklist_enable_image_preview"><![CDATA[Screenshot in Linktext]]></item>
+		<item name="wcf.acp.option.module_linklist_comments"><![CDATA[Commentsystem - Linklist]]></item>
+		<item name="wcf.acp.option.category.linklist"><![CDATA[Linklist]]></item>
+		<item name="wcf.acp.option.category.linklist.index"><![CDATA[Index]]></item>
+		<item name="wcf.acp.option.category.linklist.index.general"><![CDATA[General Settings]]></item>
+		<item name="wcf.acp.option.category.linklist.category"><![CDATA[Categories]]></item>
+		<item name="wcf.acp.option.category.linklist.category.links"><![CDATA[Links]]></item>
+		<item name="wcf.acp.option.linklist_links_per_page"><![CDATA[Links per page]]></item>
+		<item name="wcf.acp.option.category.linklist.links"><![CDATA[Links]]></item>
+		<item name="wcf.acp.option.category.linklist.links.general"><![CDATA[General settings]]></item>
+		<item name="wcf.acp.option.linklist_enable_likes"><![CDATA[Like-System]]></item>
+		<item name="wcf.acp.option.linklist_enable_tags"><![CDATA[Activate tagging]]></item>
+		<item name="wcf.acp.option.linklist_thumbalizr"><![CDATA[Use Thumbalizr]]></item>
+		<item name="wcf.acp.option.linklist_thumbalizr.description"><![CDATA[Instead Webthumbnail.org <a href="http://thumbalizr.com">Thumbalizr</a> will be used for all automatic preview images]]></item>
+		<item name="wcf.acp.option.linklist_thumbalizr_apikey"><![CDATA[Thumbalizr API-Key]]></item>
+		<item name="wcf.acp.option.linklist_thumbalizr.apikey.description"><![CDATA[To increase the thumbnails quality, please register on <a href="http://thumbalizr.com">Thumbalizr</a> and get your API-Key]]></item>
+		<item name="wcf.acp.option.linklist_enable_own_preview"><![CDATA[Own thumbnails]]></item>
+		<item name="wcf.acp.option.linklist_enable_own_preview.description"><![CDATA[Users can upload/link own thumbnails.]]></item>
+		<item name="wcf.acp.option.linklist_enable_tags.description"><![CDATA[Users can add tags.]]></item>
+		<item name="wcf.acp.option.linklist_default_sort_field"><![CDATA[Sorting]]></item>
+		<item name="wcf.acp.option.linklist_default_sort_order"><![CDATA[Sortorder]]></item>
+		<item name="wcf.acp.option.category.dashboard.sidebar.linklist"><![CDATA[Linklist]]></item>
+		<item name="wcf.acp.option.linklist_latest_limit"><![CDATA[Number of latest links]]></item>
+		<item name="wcf.acp.option.linklist_most_limit"><![CDATA[Number of mostvisited links]]></item>
+		<item name="wcf.acp.option.linklist_index_stats"><![CDATA[Statistics]]></item>
+		<item name="wcf.acp.option.linklist_index_wio"><![CDATA[Show user-online-list]]></item>
+		<item name="wcf.acp.option.linklist_index_wio_noguests"><![CDATA[Only count registered users]]></item>
+		<item name="wcf.acp.option.linklist_index_wio_legend"><![CDATA[Show legend of user groups]]></item>
+	</category>
+
+	<category name="wcf.acl.option">
+		<item
+			name="wcf.acl.option.category.de.codequake.linklist.category.user.linklist.category"><![CDATA[Permissions]]></item>
+		<item
+			name="wcf.acl.option.category.de.codequake.linklist.category.mod.linklist.category"><![CDATA[Moderative Permissions]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canViewCategory"><![CDATA[Can view category]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canEnterCategory"><![CDATA[Can enter category]]></item>
+		<item
+			name="wcf.acl.option.de.codequake.linklist.category.canManagePermissions"><![CDATA[Can manage permissions]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canViewLink"><![CDATA[Can view links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canAddLink"><![CDATA[Can add links]]></item>
+		>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canEditOwnLink"><![CDATA[Can edit own links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canDeleteOwnLink"><![CDATA[Can delete own links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canWriteComment"><![CDATA[Can write comments]]></item>
+		<item
+			name="wcf.acl.option.de.codequake.linklist.category.canEditOwnComment"><![CDATA[Can edit own comments]]></item>
+		<item
+			name="wcf.acl.option.de.codequake.linklist.category.canDeleteOwnComment"><![CDATA[Can delete own comments]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canEditComment"><![CDATA[Can edit comments]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canDeleteComment"><![CDATA[Can delete comments]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canEditLink"><![CDATA[Can edit links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canDeleteLink"><![CDATA[Can delete links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canToggleLink"><![CDATA[Can toggle links]]></item>
+		<item
+			name="wcf.acl.option.de.codequake.linklist.category.canSeeDeactivatedLink"><![CDATA[Can see non-active links]]></item>
+		<item name="wcf.acl.option.de.codequake.linklist.category.canAddActiveLink"><![CDATA[Can see links without activation]]></item>
+	</category>
+
+	<category name="wcf.user">
+		<item name="wcf.user.searchLinks"><![CDATA[Chercher les liens de „{$username}“]]></item>
+	</category>
+
+	<category name="wcf.user.profile">
+		<item name="wcf.user.profile.recentActivity.link"><![CDATA[A ajouté le lien &raquo;<a class="linklistLink" data-link-id="{$link->linkID}" href="{link controller=Link application='linklist' object=$link}{/link}">{$link->getTitle()}</a>&laquo;,]]></item>
+		<item name="wcf.user.profile.recentActivity.linkComment"><![CDATA[A commenté &raquo;<a class="linklistLink" data-link-id="{$link->linkID}" href="{link controller=Link application='linklist' object=$link}{/link}">{$link->getTitle()}</a>&laquo;.]]></item>
+		<item name="wcf.user.profile.recentActivity.linkCommentResponse"><![CDATA[A répondu à un commentaire de <a class="userLink" data-user-id="{$author->userID}"href="{link controller=User application='linklist' object=$author}{/link}">{$author->username}</a> pour &raquo;<a class="linklistLink" data-link-id="{$link->linkID}" href="{link controller=Link application='linklist' object=$link}#comment{/link}">{$link->getTitle()}</a>&laquo;.]]></item>
+	</category>
+
+	<category name="wcf.user.recentActivity">
+		<item
+			name="wcf.user.recentActivity.de.codequake.linklist.link.recentActivityEvent"><![CDATA[Lien]]></item>
+		<item
+			name="wcf.user.recentActivity.de.codequake.linklist.linkComment.recentActivityEvent"><![CDATA[Commentaire sur un lien]]></item>
+		<item
+			name="wcf.user.recentActivity.de.codequake.linklist.linkComment.response.recentActivityEvent"><![CDATA[Réponse à un lien]]></item>
+	</category>
+
+	<category name="wcf.user.activityPoint">
+		<item
+			name="wcf.user.activityPoint.objectType.de.codequake.linklist.activityPointEvent.link"><![CDATA[Liens]]></item>
+	</category>
+
+	<category name="linklist.user">
+		<item name="linklist.user.usersOnline.location.categoryListPage"><![CDATA[Liste des liens]]></item>
+		<item name="linklist.user.usersOnline.location.categoryPage"><![CDATA[<a href="{link controller='Category' application='linklist' object=$category}{/link}">Catégory „{$category->title|language}“</a>]]></item>
+		<item name="linklist.user.usersOnline.location.linkPage"><![CDATA[<a href="{link controller='Link' application='linklist' object=$link}{/link}" class="linklistLink" data-link-id="{@$link->linkID}">Lien „{$link->getTitle()}“</a>]]></item>
+		<item name="linklist.user.usersOnline.location.linkAddForm"><![CDATA[Ajouter un lien]]></item>
+	</category>
+
+	<category name="wcf.dashboard">
+		<item
+			name="wcf.dashboard.objectType.de.codequake.linklist.CategoryListPage"><![CDATA[Liste des liens]]></item>
+		<item name="wcf.dashboard.objectType.de.codequake.linklist.CategoryPage"><![CDATA[Liste des liens: Catégorie]]></item>
+		<item name="wcf.dashboard.box.de.codequake.linklist.latestLinks"><![CDATA[Derniers liens]]></item>
+		<item name="wcf.dashboard.box.de.codequake.linklist.mostVisitedLinks"><![CDATA[Liens les plus visités]]></item>
+		<item name="wcf.dashboard.box.de.codequake.linklist.randomLink"><![CDATA[Lien aléatoire]]></item>
+		<item name="wcf.dashboard.box.de.codequake.linklist.tagCloud"><![CDATA[Mots-clés]]></item>
+	</category>
+	<category name="wcf.clipboard">
+		<item name="wcf.clipboard.label.de.codequake.linklist.link.marked"><![CDATA[{if $count == 1}Un lien marqué{else}{#$count} Liens marqués{/if}]]></item>
+		<item name="wcf.clipboard.item.de.codequake.linklist.link.enable"><![CDATA[Activer les liens ({#$count})]]></item>
+		<item name="wcf.clipboard.item.de.codequake.linklist.link.disable"><![CDATA[Désactiver les liens ({#$count})]]></item>
+		<item name="wcf.clipboard.item.de.codequake.linklist.link.trash"><![CDATA[Mettre les liens à la corbeille ({#$count})]]></item>
+		<item name="wcf.clipboard.item.de.codequake.linklist.link.restore"><![CDATA[Restaurer les liens ({#$count})]]></item>
+		<item name="wcf.clipboard.item.de.codequake.linklist.link.delete"><![CDATA[Supprimer les liens ({#$count})]]></item>
+		<item
+			name="wcf.clipboard.item.de.codequake.linklist.link.enable.confirmMessage"><![CDATA[Souhaitez-vous vraiment activer {if $count == 1}ce lien{else} ces {#$count} liens{/if}?]]></item>
+		<item
+			name="wcf.clipboard.item.de.codequake.linklist.link.disable.confirmMessage"><![CDATA[Souhaitez-vous vraiment désactiver {if $count == 1}ce lien{else} ces {#$count} liens{/if}?]]></item>
+		<item
+			name="wcf.clipboard.item.de.codequake.linklist.link.trash.confirmMessage"><![CDATA[Souhaitez-vous vraiment mettre à la corbeille {if $count == 1}ce lien{else} ces {#$count} liens{/if}?]]></item>
+		<item
+			name="wcf.clipboard.item.de.codequake.linklist.link.restore.confirmMessage"><![CDATA[Souhaitez-vous vraiment restaurer {if $count == 1}ce lien supprimé{else}ces {#$count} liens supprimés{/if}?]]></item>
+		<item
+			name="wcf.clipboard.item.de.codequake.linklist.link.delete.confirmMessage"><![CDATA[Souhaitez-vous vraiment supprimer {if $count == 1}ce lien{else} ces {#$count} liens{/if}?]]></item>
+	</category>
+
+	<category name="wcf.search">
+		<item name="wcf.search.type.de.codequake.linklist.link"><![CDATA[Liens]]></item>
+		<item name="wcf.search.object.de.codequake.linklist.link"><![CDATA[Lien]]></item>
+	</category>
+
+	<category name="wcf.page">
+		<item name="wcf.page.sitemap.linklist"><![CDATA[Liste des liens]]></item>
+	</category>
+
+	<category name="wcf.moderation">
+		<item name="wcf.moderation.type.de.codequake.linklist.moderation.offline"><![CDATA[Signalement hors ligne]]></item>
+		<item name="wcf.moderation.type.de.codequake.linklist.link"><![CDATA[Lien]]></item>
+		<item
+			name="wcf.moderation.deletedContent.objectType.de.codequake.linklist.link"><![CDATA[Liens]]></item>
+		<item name="wcf.moderation.deletedContent.de.codequake.linklist.link"><![CDATA[Liens]]></item>
+	</category>
+
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.linklist"><![CDATA[Linklist]]></item>
+		<item name="wcf.acp.group.option.category.mod.linklist"><![CDATA[Linklist]]></item>
+		<item name="wcf.acp.group.option.category.admin.linklist"><![CDATA[Linklist]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canEnterCategory"><![CDATA[Can enter categories]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canViewCategory"><![CDATA[Can see categories]]></item>
+		<item name="wcf.acp.group.option.category.user.linklist.category"><![CDATA[Categories]]></item>
+		<item name="wcf.acp.group.option.category.user.linklist.link"><![CDATA[Links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canViewLink"><![CDATA[Can see links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canSeeDeactivatedLink"><![CDATA[Can see non-active links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canAddLink"><![CDATA[Can add links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canAddActiveLink"><![CDATA[Can add links without a moderators activation]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canEditOwnLink"><![CDATA[Can edit own links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canDeleteOwnLink"><![CDATA[Can delete own links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canWriteComment"><![CDATA[Can comment on links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canEditOwnComment"><![CDATA[Can edit own comments]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canDeleteOwnComment"><![CDATA[Can delete own comments]]></item>
+		<item name="wcf.acp.group.option.category.mod.linklist.link"><![CDATA[Links]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canAddOwnPreview"><![CDATA[Can use own thumbnails]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canDeleteLink"><![CDATA[Can delete links]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canEditLink"><![CDATA[Can edit links]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canTrashLink"><![CDATA[Can trash links]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canToggleLink"><![CDATA[Can toggle links]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canEditComment"><![CDATA[Can edit comments]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canModerateComment"><![CDATA[Can moderate comments]]></item>
+		<item name="wcf.acp.group.option.mod.linklist.link.canDeleteComment"><![CDATA[Can delete comments]]></item>
+		<item name="wcf.acp.group.option.category.admin.linklist.category"><![CDATA[Categories]]></item>
+		<item name="wcf.acp.group.option.category.admin.linklist.data"><![CDATA[Data]]></item>
+		<item name="wcf.acp.group.option.admin.linklist.category.canListCategory"><![CDATA[Can list categories]]></item>
+		<item name="wcf.acp.group.option.admin.linklist.category.canAddCategory"><![CDATA[Can add categories]]></item>
+		<item name="wcf.acp.group.option.admin.linklist.category.canDeleteCategory"><![CDATA[Can delete categories]]></item>
+		<item name="wcf.acp.group.option.admin.linklist.category.canEditCategory"><![CDATA[Can edit categories]]></item>
+		<item name="wcf.acp.group.option.admin.linklist.data.canImportData"><![CDATA[Can import data]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canUploadAttachment"><![CDATA[Can attach files]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.attachmentMaxSize"><![CDATA[Maximum filesize]]></item>
+		<item
+			name="wcf.acp.group.option.user.linklist.link.allowedAttachmentExtensions"><![CDATA[Allowed file extensions]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.canDownloadAttachments"><![CDATA[Can download attachments]]></item>
+		<item name="wcf.acp.group.option.user.linklist.link.maxAttachmentCount"><![CDATA[Maximum number of attachments per link]]></item>
+	</category>
+
+	<category name="wcf.tagging">
+		<item name="wcf.tagging.taggedObjects.de.codequake.linklist.link"><![CDATA[Liens avec le mot-clé „{$tag->name}“]]></item>
+		<item name="wcf.tagging.objectType.de.codequake.linklist.link"><![CDATA[Liens]]></item>
+	</category>
+
+	<category name="wcf.acp.index">
+		<item name="wcf.acp.index.system.software.linklistVersion"><![CDATA[Version de la liste des liens]]></item>
+	</category>
+
+	<category name="wcf.user.notification">
+		<item name="wcf.user.notification.de.codequake.linklist"><![CDATA[Liste des liens]]></item>
+		<item
+			name="wcf.user.notification.de.codequake.linklist.linkComment.notification.comment"><![CDATA[Nouveau commentaire sur un de vos liens]]></item>
+		<item
+			name="wcf.user.notification.de.codequake.linklist.linkComment.response.notification.commentResponse"><![CDATA[Nouvelle réponse à un de vos commentaires sur un lien]]></item>
+		<item
+			name="wcf.user.notification.de.codequake.linklist.linkComment.response.notification.commentResponseOwner"><![CDATA[Nouvelle réponse à un de vos commentaires sur un de vos liens]]></item>
+	</category>
+</language>
