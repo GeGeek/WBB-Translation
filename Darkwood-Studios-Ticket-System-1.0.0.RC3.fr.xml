@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="fr" languagename="Français" countrycode="fr">
+    <!-- ticketsystem -->
+    <category name="ticketsystem.header.menu">
+        <item name="ticketsystem.header.menu.index"><![CDATA[Système de tickets]]></item>
+        <item name="ticketsystem.header.menu.myTickets"><![CDATA[Mes tickets]]></item>
+    </category>
+    <category name="ticketsystem.footer.menu">
+        <item name="ticketsystem.footer.menu.index"><![CDATA[Système de tickets]]></item>
+    </category>
+    <category name="ticketsystem.global.index">
+        <item name="ticketsystem.global.index.usersOnline.location"><![CDATA[Système de tickets]]></item>
+        <item name="ticketsystem.global.index.tickets"><![CDATA[Tickets]]></item>
+        <item name="ticketsystem.global.index.noTickets"><![CDATA[Aucun ticket actif trouvé.]]></item>
+        <item name="ticketsystem.global.index.ticketAdd"><![CDATA[Nouveau ticket]]></item>
+        <item name="ticketsystem.global.index.pleaseRegister"><![CDATA[Veuillez vous connecter pour utiliser le système de tickets.]]></item>
+        <item name="ticketsystem.global.index.copyright"><![CDATA[<a href="http://www.darkwood-studios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}><strong>Système de tickets{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, créé par <strong>Darkwood-Studios</strong></a>]]></item>
+    </category>
+    <category name="ticketsystem.global.ticketAdd">
+        <item name="ticketsystem.global.index.ticketAdd.noUser"><![CDATA[Vous n’avez pas la permission de créer un nouveau ticket.]]></item>
+    </category>
+    <category name="ticketsystem.ticket">
+        <item name="ticketsystem.ticket.information"><![CDATA[Information]]></item>
+        <item name="ticketsystem.ticket.subject"><![CDATA[Sujet]]></item>
+        <item name="ticketsystem.ticket.text"><![CDATA[Message]]></item>
+        <item name="ticketsystem.ticket.ticketID"><![CDATA[ID du Ticket]]></item>
+        <item name="ticketsystem.ticket.priority"><![CDATA[Priorité]]></item>
+        <item name="ticketsystem.ticket.category"><![CDATA[Catégorie]]></item>
+        <item name="ticketsystem.ticket.lastPost"><![CDATA[Dernière réponse]]></item>
+        <item name="ticketsystem.ticket.edit"><![CDATA[Editer]]></item>
+        <item name="ticketsystem.ticket.add"><![CDATA[Nouveau ticket]]></item>
+        <item name="ticketsystem.ticket.undone"><![CDATA[Non terminé]]></item>
+        <item name="ticketsystem.ticket.done"><![CDATA[Terminé]]></item>
+        <item name="ticketsystem.ticket.delete"><![CDATA[Supprimer]]></item>
+        <item name="ticketsystem.ticket.gotoAnswer"><![CDATA[Aller à la dernière réponse]]></item>
+        <item name="ticketsystem.ticket.assignToMe"><![CDATA[M’assigner le ticket]]></item>
+        <item name="ticketsystem.ticket.setFree"><![CDATA[Libérer le ticket]]></item>
+        <item name="ticketsystem.ticket.markAsDone"><![CDATA[Marquer comme terminé]]></item>
+        <item name="ticketsystem.ticket.markAsUndone"><![CDATA[Marquer comme terminé]]></item>
+        <item name="ticketsystem.ticket.notification.mail"><![CDATA[{@$author->username} a créé une nouvelle réponse au ticket.]]></item>
+        <item name="ticketsystem.ticket.assign.failure"><![CDATA[Le billet ne peut pas vous être attribué.]]></item>
+        <item name="ticketsystem.ticket.markAsUndone.failure"><![CDATA[Le ticket ne peut pas être marqué comme terminé ou non terminé.]]></item>
+        <item name="ticketsystem.ticket.delete.failure"><![CDATA[Le ticket ne peut pas être supprimé.]]></item>
+    </category>
+    <category name="ticketsystem.answer">
+        <item name="ticketsystem.answer.add"><![CDATA[Répondre]]></item>
+        <item name="ticketsystem.answer.edit"><![CDATA[Editer la réponse]]></item>
+        <item name="ticketsystem.answer.message"><![CDATA[Message]]></item>
+    </category>
+    <category name="ticketsystem.priority">
+        <item name="ticketsystem.priority.priorities"><![CDATA[Priorités]]></item>
+        <item name="ticketsystem.priority.new"><![CDATA[Nouvelle priorité]]></item>
+        <item name="ticketsystem.priority.save"><![CDATA[Entrée sauvegardée]]></item>
+        <item name="ticketsystem.priority.generalData"><![CDATA[Information]]></item>
+        <item name="ticketsystem.priority.label"><![CDATA[Etiquette]]></item>
+        <item name="ticketsystem.priority.label.critical"><![CDATA[Critique]]></item>
+        <item name="ticketsystem.priority.label.major"><![CDATA[Majeur]]></item>
+        <item name="ticketsystem.priority.label.minor"><![CDATA[Mineur]]></item>
+        <item name="ticketsystem.priority.label.trivial"><![CDATA[Normal]]></item>
+        <item name="ticketsystem.priority.label.none"><![CDATA[Aucune]]></item>
+        <item name="ticketsystem.priority.delete"><![CDATA[Souhaitez-vous vraiment supprimer cette priorité?]]></item>
+    </category>
+    <category name="ticketsystem.acp.category">
+        <item name="ticketsystem.acp.category.user"><![CDATA[Chef de groupe]]></item>
+        <item name="ticketsystem.acp.category.user.assigned"><![CDATA[Assignee]]></item>
+        <item name="ticketsystem.acp.category.user.assigned.description">
+            <![CDATA[Saisissez ici le nom de l’utilisateur responsable. Les billets lui seront automatiquement assignés.]]></item>
+    </category>
+    <category name="ticketsystem.ticket.notification">
+        <item name="ticketsystem.ticket.notification.message"><![CDATA[A ouvert un nouveau ticket.]]></item>
+    </category>
+    <category name="ticketsystem.answer.notification">
+        <item name="ticketsystem.answer.notification.message"><![CDATA[A créé une réponse à votre ticket.]]></item>
+        <item name="ticketsystem.answer.notification.mail"><![CDATA[{@$author->username} a créé une réponse à ticket.}]]></item>
+    </category>
+    <!-- ticketsystem acp -->
+    <category name="ticketsystem.acp.menu">
+        <item name="ticketsystem.acp.menu.link.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.priority"><![CDATA[Priorités]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.priority.add"><![CDATA[Ajouter une priorité]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.priority.show"><![CDATA[Afficher les priorités]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.category"><![CDATA[Catégories]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.category.add"><![CDATA[Ajouter une catégorie]]></item>
+        <item name="ticketsystem.acp.menu.link.ticketsystem.category.show"><![CDATA[Afficher les catégories]]></item>
+    </category>
+    <!-- wcf acp -->
+    <category name="wcf.acp.option">
+        <item name="wcf.acp.option.category.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="wcf.acp.option.category.ticketsystem.tickets"><![CDATA[Tickets]]></item>
+        <item name="wcf.acp.option.category.ticketsystem.answers"><![CDATA[Réponses]]></item>
+        <item name="wcf.acp.option.ticket_id_converter"><![CDATA[Convertir l’ID du ticket en numéro du ticket]]></item>
+        <item name="wcf.acp.option.ticket_id_converter.description"> <![CDATA[Changer l’ID du ticket simple pour un numéro de ticket avec l’année en cours avant. (ex: 1400003)]]></item>
+        <item name="wcf.acp.option.ticket_answer_sort_order"><![CDATA[Tri]]></item>
+        <item name="wcf.acp.option.ticket_answer_sort_order.description"><![CDATA[Le tri des réponses.]]></item>
+        <item name="wcf.acp.option.ticket_answer_view"><![CDATA[Vue]]></item>
+        <item name="wcf.acp.option.ticket_answer_view.description"><![CDATA[L’affichage choisi pour une réponse.]]></item>
+        <item name="wcf.acp.option.ticket_answer_view.simple"><![CDATA[Simple]]></item>
+        <item name="wcf.acp.option.ticket_answer_view.extended"><![CDATA[Etendue]]></item>
+    </category>
+    <category name="wcf.acp.group">
+        <item name="wcf.acp.group.option.category.user.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="wcf.acp.group.option.user.ticketsystem.canReplyToTicket"><![CDATA[Peut répondre aux tickets]]></item>
+        <item name="wcf.acp.group.option.user.ticketsystem.canViewTicketsystem"><![CDATA[Peut voir le système de tickets]]></item>
+        <item name="wcf.acp.group.option.user.ticketsystem.canCreateTicket"><![CDATA[Peut créer des tickets]]></item>
+        <item name="wcf.acp.group.option.user.ticketsystem.canUsePriority"><![CDATA[Peut choisir les priorités]]></item>
+        <item name="wcf.acp.group.option.category.mod.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="wcf.acp.group.option.mod.ticketsystem.canSeeTickets"><![CDATA[Peut gérer les tickets]]></item>
+        <item name="wcf.acp.group.option.mod.ticketsystem.canDeleteTicket"><![CDATA[Peut supprimer les tickets]]></item>
+        <item name="wcf.acp.group.option.mod.ticketsystem.canEditTicket"><![CDATA[Peut éditer les tickets]]></item>
+        <item name="wcf.acp.group.option.category.admin.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="wcf.acp.group.option.admin.ticketsystem.canManageCategory"><![CDATA[Peut gérer les catégories]]></item>
+        <item name="wcf.acp.group.option.admin.ticketsystem.canManagePriority"><![CDATA[Peut gérer les priorités]]></item>
+    </category>
+    <!-- wcf user -->
+    <category name="wcf.user.notification">
+        <item name="wcf.user.notification.de.darkwood-studios.ticketsystem"><![CDATA[Système de tickets]]></item>
+        <item name="wcf.user.notification.de.darkwood-studios.ticketsystem.answer.answer"><![CDATA[Nouvelle réponse à un de vos tickets]]></item>
+        <item name="wcf.user.notification.de.darkwood-studios.ticketsystem.ticket.ticket"><![CDATA[Nouveau ticket créé]]></item>
+    </category>
+</language>
