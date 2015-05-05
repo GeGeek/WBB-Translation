@@ -1560,7 +1560,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.message_sidebar_enable_message_group_starter_icon"><![CDATA[Mettre en valeur l’auteur de la discussion]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_online_status"><![CDATA[Afficher l’état de connexion]]></item>
 		<item name="wcf.acp.option.message_sidebar_enable_rank"><![CDATA[Afficher le rang utilisateur]]></item>
-		<item name="wcf.acp.option.message_sidebar_enable_user_online_marking"><![CDATA[Apply “Users Online” markings for usernames]]></item>
+		<item name="wcf.acp.option.message_sidebar_enable_user_online_marking"><![CDATA[Appliquer le marqueur “Utilisateurs en ligne” pour les utilisateurs]]></item>
 		<item name="wcf.acp.option.message_sidebar_user_options"><![CDATA[Champs de profil à afficher]]></item>
 		<item name="wcf.acp.option.meta_description"><![CDATA[Métadonnées - Description]]></item>
 		<item name="wcf.acp.option.meta_keywords"><![CDATA[Métadonnées - Mots-clés]]></item>
