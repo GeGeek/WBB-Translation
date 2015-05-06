@@ -4222,7 +4222,7 @@ Votre inscrition est finalisée.]]></item>
 {if $usersOnlineList->stats[invisible] > 0}
 	(dont {#$usersOnlineList->stats[invisible]} invisible{if $usersOnlineList->stats[invisible] > 1}s{/if})
 {/if}
-{if $usersOnlineList->stats[guests] > 0 && $usersOnlineList->stats[members] > 0}et{/if}
+{if $usersOnlineList->stats[guests] > 0 && $usersOnlineList->stats[members] > 0} et{/if}
 {if $usersOnlineList->stats[guests] > 0}
 	{#$usersOnlineList->stats[guests]} invité{if $usersOnlineList->stats[guests] != 1}s{/if}
 {/if}]]></item>
