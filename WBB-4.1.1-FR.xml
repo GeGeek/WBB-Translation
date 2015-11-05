@@ -100,9 +100,11 @@
 		<item name="wbb.acp.bulkProcessing.conditions.time.before"><![CDATA[Avant le]]></item>
 		<item name="wbb.acp.bulkProcessing.post"><![CDATA[Traitement de masse des messages]]></item>
 		<item name="wbb.acp.bulkProcessing.post.success"><![CDATA[L’action a été exécutée sur {#$affectedPosts} message{if $affectedPosts > 1}s{/if}.{if $affectedPosts > 0}<br />Pensez à <a href="{link controller='RebuildData'}{/link}">“Recompiler les données”</a> ensuite.{/if}]]></item>
+
 		<item name="wbb.acp.bulkProcessing.post.warning"><![CDATA[Le traitement de masse des messages exécutera l’action sélectionnée <b>sans aucune mise en garde de sécurité</b> , sur tous les messages correspondants aux critères requis.]]></item>
 		<item name="wbb.acp.bulkProcessing.thread"><![CDATA[Traitement de masse des discussions]]></item>
 		<item name="wbb.acp.bulkProcessing.thread.success"><![CDATA[L’action a été exécutée sur {#$affectedThreads} discussion{if $affectedThreads > 1}s{/if}.{if $affectedThreads > 0}<br />Pensez à <a href="{link controller='RebuildData'}{/link}">“Recompiler les données”</a> ensuite.{/if}]]></item>
+
 		<item name="wbb.acp.bulkProcessing.thread.warning"><![CDATA[Le traitement de masse des discussions exécutera l’action sélectionnée <b>sans aucune mise en garde de sécurité</b>, sur toutes les discussions correspondantes aux critères requis.]]></item>
 	</category>
 	<category name="wbb.acp.menu">
@@ -139,8 +141,10 @@
 		<item name="wbb.acp.rssFeed.lastRun"><![CDATA[Dernière vérification]]></item>
 		<item name="wbb.acp.rssFeed.list"><![CDATA[Flux RSS]]></item>
 		<item name="wbb.acp.rssFeed.maxResults"><![CDATA[Nombre maximum de nouvelles entrées]]></item>
+
 		<item name="wbb.acp.rssFeed.maxResults.description"><![CDATA[Limiter le nombre de nouvelles entrées rapportées à chaque vérification. Vous pouvez désactiver la limite en mettant la valeur “0”. Il est recommandé de limiter le nombre de nouvelles entrées des flux RSS qui fournissent rapidement de nouvelles entrées.]]></item>
 		<item name="wbb.acp.rssFeed.searchKeywords"><![CDATA[Filtrer par mots clés]]></item>
+
 		<item name="wbb.acp.rssFeed.searchKeywords.description"><![CDATA[Considérer uniquement les entrées contenant un ou plusieurs mots-clés fournis ci-dessus, toutes les autres entrées seront ignorées. Séparer plusieurs mots-clés par une virgule.]]></item>
 		<item name="wbb.acp.rssFeed.template"><![CDATA[[quote='{@$author}','{@$link}']{@$description}[/quote]Source: [url]{@$link}[/url]]]></item>
 		<item name="wbb.acp.rssFeed.threadData"><![CDATA[Donnée de discussion]]></item>
@@ -189,6 +193,7 @@
 	</category>
 	<category name="wbb.condition">
 		<item name="wbb.condition.page.board"><![CDATA[Forum requis]]></item>
+
 		<item name="wbb.condition.page.board.description"><![CDATA[L’avis ne s’affiche que si l’utilisateur actif est dans l’un des forums sélectionnés. Plusieurs éléments peuvent être sélectionnés en maintenant la touche "Ctrl / Shift" (Windows) ou la touche "Commande" (Mac OS) et en cliquant sur les éléments souhaités.]]></item>
 	</category>
 	<category name="wbb.header">
@@ -226,7 +231,9 @@
 		<item name="wbb.post.edit.disable"><![CDATA[Désactiver]]></item>
 		<item name="wbb.post.edit.enable"><![CDATA[Activer]]></item>
 		<item name="wbb.post.edit.merge"><![CDATA[Fusionner les messages]]></item>
+
 		<item name="wbb.post.edit.merge.description"><![CDATA[Tous les messages seront fusionnés à la place du premier. Déterminez l’ordre de fusion par “glisser-déposer”.]]></item>
+		<item name="wbb.post.edit.merge.reason"><![CDATA[{if $postOrder|count == 1}Un message a été fusionné, créé par{else}{#$postOrder|count} des messages ont été fusionnés, créés par{/if} {implode from=$usernames item='username'}{$username}{/implode} dans ce message.]]></item>
 		<item name="wbb.post.edit.merge.success"><![CDATA[Les messages ont bien été fusionnés]]></item>
 		<item name="wbb.post.edit.open"><![CDATA[Autoriser la modification]]></item>
 		<item name="wbb.post.edit.restore"><![CDATA[Rétablir]]></item>
@@ -238,6 +245,7 @@
 		<item name="wbb.post.enableTime"><![CDATA[Date de publication]]></item>
 		<item name="wbb.post.enableTime.description"><![CDATA[Veuillez spécifier une date de publication, la discussion/le message restera désactivé(e) en attendant.]]></item>
 		<item name="wbb.post.enableTime.error.invalid"><![CDATA[La date sélectionnée est invalide, vous devez spécifier une date future.]]></item>
+		<item name="wbb.post.error.doublePost"><![CDATA[La dernière réponse dans cette discussion a été écrite par vous, {if $seconds == -1}vous ne pourrez pas répondre de nouveau tant qu’un autre utilisateur n’aura pas répondu dans cette discussion.{else}vous ne pouvez pas répondre de nouveau avant {if $seconds == 1}une seconde{else}{#$seconds} secondes{/if}.{/if}]]></item>
 		<item name="wbb.post.error.floodControl"><![CDATA[Vous avez déjà écrit un message il y a {if $__wcf->getSession()->getPermission('user.board.floodControlTime') > 1}{#$__wcf->getSession()->getPermission('user.board.floodControlTime')} secondes{else}seconde{/if}. Vous devez attendre au moins {#$lastPostTime+$__wcf->getSession()->getPermission('user.board.floodControlTime')-TIME_NOW} seconde{if ($lastPostTime+$__wcf->getSession()->getPermission('user.board.floodControlTime')-TIME_NOW) != 1}s{/if} avant de pouvoir écrire à nouveau.]]></item>
 		<item name="wbb.post.information"><![CDATA[Information]]></item>
 		<item name="wbb.post.ipAddress"><![CDATA[IP: {$post->getIpAddress()}]]></item>
@@ -337,6 +345,7 @@
 		<item name="wbb.thread.lastPostTime"><![CDATA[Dernier message]]></item>
 		<item name="wbb.thread.markAsRead.doubleClick"><![CDATA[Double-cliquez pour marquer cette discussion comme lue]]></item>
 		<item name="wbb.thread.moderation.disabledThread"><![CDATA[This thread requires approval by a moderator, until then it will remain invisible for others.]]></item>
+
 		<item name="wbb.thread.moderation.info"><![CDATA[Les nouvelles discussions doivent être vérifiées avant leur publication. Vous ne pourrez ni la voir, ni la modifier avant son activation.]]></item>
 		<item name="wbb.thread.moderation.redirect"><![CDATA[Votre discussion sera activée manuellement et ne sera pas visible avant son activation.]]></item>
 		<item name="wbb.thread.moved"><![CDATA[Discussion déplacée]]></item>
@@ -443,6 +452,8 @@
 		<item name="wcf.acl.option.category.com.woltlab.wbb.board.user.thread"><![CDATA[Discussions]]></item>
 		<item name="wcf.acl.option.com.woltlab.wbb.board.canClosePost"><![CDATA[Peut fermer les messages]]></item>
 		<item name="wcf.acl.option.com.woltlab.wbb.board.canCloseThread"><![CDATA[Peut fermer les discussions]]></item>
+		<item name="wcf.acl.option.com.woltlab.wbb.board.canCopyPost"><![CDATA[Peut copier les messages]]></item>
+		<item name="wcf.acl.option.com.woltlab.wbb.board.canCopyThread"><![CDATA[Peut copier les discussions]]></item>
 		<item name="wcf.acl.option.com.woltlab.wbb.board.canDeleteOwnPost"><![CDATA[Peut supprimer ses messages]]></item>
 		<item name="wcf.acl.option.com.woltlab.wbb.board.canDeletePost"><![CDATA[Peut mettre les messages à la corbeille]]></item>
 		<item name="wcf.acl.option.com.woltlab.wbb.board.canDeletePostCompletely"><![CDATA[Peut supprimer les messages]]></item>
@@ -525,6 +536,7 @@
 	</category>
 	<category name="wcf.acp.application">
 		<item name="wcf.acp.application.cookie"><![CDATA[Paramètre du cookie]]></item>
+
 		<item name="wcf.acp.application.cookie.warning"><![CDATA[Le paramètre ci-dessous est utilisé pour établir une connexion persistante à votre site. Ne modifiez ce paramètre que lorsque le domaine change. Si vous ne savez pas quelle valeur spécifier, vous pouvez recopier en toute sécurité la valeur au-dessus (Domaine).]]></item>
 		<item name="wcf.acp.application.cookieDomain"><![CDATA[Domaine du cookie]]></item>
 		<item name="wcf.acp.application.cookieDomain.error.containsPath"><![CDATA[Le domaine du cookie ne doit pas contenir d’éléments du chemin]]></item>
@@ -549,6 +561,7 @@
 	</category>
 	<category name="wcf.acp.bbcode">
 		<item name="wcf.acp.bbcode.add"><![CDATA[Ajouter un BBCode]]></item>
+
 		<item name="wcf.acp.bbcode.add.userGroupOptionInfo"><![CDATA[Les BBCodes nouvellement créés sont accessibles à tout le monde. Vous pouvez restreindre leur utilisation en modifiant les permissions de groupe.]]></item>
 		<item name="wcf.acp.bbcode.allowedChildren"><![CDATA[Sous BBCodes autorisés]]></item>
 		<item name="wcf.acp.bbcode.allowedChildren.error.notValid"><![CDATA[La liste des sous BBCodes autorisés n’est pas valide.]]></item>
@@ -583,6 +596,7 @@ Exemple:<br />
 		<item name="wcf.acp.bbcode.mediaProvider.list"><![CDATA[Fournisseurs de média]]></item>
 		<item name="wcf.acp.bbcode.mediaProvider.regex"><![CDATA[Expression régulière]]></item>
 		<item name="wcf.acp.bbcode.mediaProvider.regex.description"><![CDATA[Veuillez spécifier le format d’adresse comme une <a href="{@$__wcf->getPath()}acp/dereferrer.php?url=http%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FRegular_expression">expression régulière</a>. Une expression par ligne.<br />
+
 Exemples pour la détection des ID de média:
 <ul>
 	<li><code>(?&lt;ID&gt;[0-9]+)</code> détectera une ID numérique.</li>
@@ -684,7 +698,8 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.cronjob.timing.error.notValid"><![CDATA[Le format de temps n’est pas valide.]]></item>
 	</category>
 	<category name="wcf.acp.dashboard">
-		<item name="wcf.acp.dashboard.box.sort"><![CDATA[Classez les blocs par “glisser-déposer” pour déterminer leur positionnement. Vous pouvez activer ou désactiver les blocs en les déplaçant entre les deux parties “Blocs activés” et “Blocs désactivés”.]]></item>
+
+	<item name="wcf.acp.dashboard.box.sort"><![CDATA[Classez les blocs par “glisser-déposer” pour déterminer leur positionnement. Vous pouvez activer ou désactiver les blocs en les déplaçant entre les deux parties “Blocs activés” et “Blocs désactivés”.]]></item>
 		<item name="wcf.acp.dashboard.list"><![CDATA[Configurer le tableau de bord et les pages]]></item>
 		<item name="wcf.acp.dashboard.option"><![CDATA[Configurer les boîtes du tableau de bord]]></item>
 	</category>
@@ -745,6 +760,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.dataImport.data.com.woltlab.wcf.user.option"><![CDATA[Champs de profil utilisateur]]></item>
 		<item name="wcf.acp.dataImport.data.com.woltlab.wcf.user.rank"><![CDATA[Rangs]]></item>
 		<item name="wcf.acp.dataImport.existingMapping.confirmMessage"><![CDATA[Souhaitez-vous vraiment supprimer les correspondances d’importation ?]]></item>
+
 		<item name="wcf.acp.dataImport.existingMapping.notice"><![CDATA[Il y a des correspondances d’importation créées lors d’un précédent processus d’importation. Ces correspondances sont utilisées pour traiter correctement les données importées de celle existantes. Si vous avez importé toutes les données souhaitées, vous pouvez <a id="deleteMapping">supprimer</a> ces correspondances. Nous vous recommandons de ne pas les supprimer si vous n’avez pas fini l’importation de toutes les données, ou si vous souhaitez en importer de nouvelles dans le futur.]]></item>
 		<item name="wcf.acp.dataImport.exporter"><![CDATA[Source des données]]></item>
 		<item name="wcf.acp.dataImport.exporter.com.woltlab.wcf.exporter.ipb3x"><![CDATA[IP.Board 3.4.x]]></item>
@@ -793,15 +809,15 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.group.assignment.error.noConditions"><![CDATA[You have not chosen any condition.]]></item>
 		<item name="wcf.acp.group.assignment.isDisabled"><![CDATA[Disable Automatic Assignment]]></item>
 		<item name="wcf.acp.group.assignment.list"><![CDATA[Automatic User Group Assignments]]></item>
-		<item name="wcf.acp.group.assignment.userGroup"><![CDATA[User Group]]></item>
+		<item name="wcf.acp.group.assignment.userGroup"><![CDATA[Groupes d’utilisateurs]]></item>
 		<item name="wcf.acp.group.button.choose"><![CDATA[Choix du groupe d’utilisateurs]]></item>
-		<item name="wcf.acp.group.button.copy"><![CDATA[Copy User Group]]></item>
+		<item name="wcf.acp.group.button.copy"><![CDATA[Copier les groupe d’utilisateurs]]></item>
 		<item name="wcf.acp.group.copy.confirmMessage"><![CDATA[Do you really want to copy this user group?]]></item>
 		<item name="wcf.acp.group.copy.copyACLOptions"><![CDATA[Copy Object Permissions]]></item>
 		<item name="wcf.acp.group.copy.copyACLOptions.description"><![CDATA[Permissions set for certain objects like for label groups will also be set for the new user group.]]></item>
-		<item name="wcf.acp.group.copy.copyMembers"><![CDATA[Copy Members]]></item>
+		<item name="wcf.acp.group.copy.copyMembers"><![CDATA[Copier les membres]]></item>
 		<item name="wcf.acp.group.copy.copyMembers.description"><![CDATA[Members of the copied user group will automatically be members of the new user group.]]></item>
-		<item name="wcf.acp.group.copy.copyUserGroupOptions"><![CDATA[Copy Permissions]]></item>
+		<item name="wcf.acp.group.copy.copyUserGroupOptions"><![CDATA[Copier les permissions]]></item>
 		<item name="wcf.acp.group.copy.copyUserGroupOptions.description"><![CDATA[The new user group will have the same permissions as the copied user group.]]></item>
 		<item name="wcf.acp.group.delete.sure"><![CDATA[Souhaitez-vous vraiment supprimer le groupe d’utilisateurs “{$group->groupName|language}” ?]]></item>
 		<item name="wcf.acp.group.description"><![CDATA[Description]]></item>
@@ -851,9 +867,10 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.group.option.admin.template.canManageTemplate"><![CDATA[Peut gérer les templates]]></item>
 		<item name="wcf.acp.group.option.admin.user.accessibleGroups"><![CDATA[Groupes d’utilisateurs accessibles]]></item>
 		<item name="wcf.acp.group.option.admin.user.accessibleGroups.description"><![CDATA[Les membres de ce groupe auront accès aux groupes suivants, ainsi qu’à leurs permissions.]]></item>
+
 		<item name="wcf.acp.group.option.admin.user.canAddGroup"><![CDATA[Peut ajouter des groupes d’utilisateurs]]></item>
+
 		<item name="wcf.acp.group.option.admin.user.canAddUser"><![CDATA[Peut ajouter des comptes membre]]></item>
-		<item name="wcf.acp.group.option.admin.user.canAddUser.description"><![CDATA[Si le groupe assigné comporte des groupes accessibles, alors ceux-ci peuvent aussi être assignés au nouveau compte utilisateur.]]></item>
 		<item name="wcf.acp.group.option.admin.user.canBanUser"><![CDATA[Peut exclure les membres]]></item>
 		<item name="wcf.acp.group.option.admin.user.canDeleteGroup"><![CDATA[Peut supprimer les groupes d’utilisateurs]]></item>
 		<item name="wcf.acp.group.option.admin.user.canDeleteUser"><![CDATA[Peut supprimer le compte des membres]]></item>
@@ -1009,6 +1026,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.group.option.user.conversation.maxLength"><![CDATA[Taille maximum du message]]></item>
 		<item name="wcf.acp.group.option.user.conversation.maxParticipants"><![CDATA[Participants maximum]]></item>
 		<item name="wcf.acp.group.option.user.conversation.maxParticipants.description"><![CDATA[Nombre maximum de participants par conversation]]></item>
+		<item name="wcf.acp.group.option.user.comment.floodControlTime.description"><![CDATA[Minimum delay between creation of two comments or replies. [time in seconds, 0 to disable]]]></item>
 		<item name="wcf.acp.group.option.user.like.canLike"><![CDATA[Peut aimer / ne pas aimer les contenus]]></item>
 		<item name="wcf.acp.group.option.user.like.canViewLike"><![CDATA[Peut voir les “J’aime / Je n’aime pas” donnés]]></item>
 		<item name="wcf.acp.group.option.user.message.allowedBBCodes"><![CDATA[BBCodes autorisés]]></item>
@@ -1045,6 +1063,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.group.option.user.signature.maxLength"><![CDATA[Longueur maximale de la signature]]></item>
 		<item name="wcf.acp.group.option.user.tag.canViewTag"><![CDATA[Peut voir les mots clé]]></item>
 		<item name="wcf.acp.group.priority"><![CDATA[Priorité d’affichage]]></item>
+
 		<item name="wcf.acp.group.priority.description"><![CDATA[Détermine la priorité d’affichage dans la liste des membres de l’équipe, rangs utilisateur et la liste des utilisateurs en ligne.]]></item>
 		<item name="wcf.acp.group.showMembers"><![CDATA[Afficher les membres de ce groupe]]></item>
 		<item name="wcf.acp.group.showOnTeamPage"><![CDATA[Afficher les membres de ce groupe dans la page des membres de l’équipe]]></item>
@@ -1076,6 +1095,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.index.system.software.wbbVersion"><![CDATA[Version de Burning Board&reg;]]></item>
 		<item name="wcf.acp.index.system.software.wcfVersion"><![CDATA[Version de Community Framework&trade;]]></item>
 		<item name="wcf.acp.index.system.webserver"><![CDATA[Serveur web]]></item>
+		<item name="wcf.acp.index.tmpBroken"><![CDATA[For proper operation the folder “{WCF_DIR|concat:'tmp/'}” must exist and it must be writable. Please also check the permissions of the “{'WCF_DIR'|constant}” folder.]]></item>
 		<item name="wcf.acp.index.woltlab.forums"><![CDATA[Forum de support]]></item>
 		<item name="wcf.acp.index.woltlab.pluginStore"><![CDATA[Plugin Store]]></item>
 		<item name="wcf.acp.index.woltlab.tickets"><![CDATA[Support par ticket]]></item>
@@ -1147,6 +1167,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.language.list"><![CDATA[Langues]]></item>
 		<item name="wcf.acp.language.multilingualism"><![CDATA[Multilinguisme]]></item>
 		<item name="wcf.acp.language.multilingualism.enable"><![CDATA[Activer le multilinguisme]]></item>
+
 		<item name="wcf.acp.language.multilingualism.enable.description"><![CDATA[L’activation du multilinguisme donne la possibilité d’associer le contenu généré par les membres à une langue. Le contenu nouvellement généré est automatiquement associé à la langue d’affichage de l’interface du membre qui crée le contenu. Cette fonction permet aux membres de choisir les contenus, en association à la langue, qu’ils souhaitent voir afficher (via leurs paramètres).]]></item>
 		<item name="wcf.acp.language.multilingualism.languages"><![CDATA[Langues disponibles]]></item>
 		<item name="wcf.acp.language.multilingualism.languages.error.empty"><![CDATA[Vous devez sélectionner au minimum deux langues pour activer le multilinguisme !]]></item>
@@ -1161,11 +1182,13 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.masterPassword.enter"><![CDATA[Mot de passe administratif requis]]></item>
 		<item name="wcf.acp.masterPassword.enter.description"><![CDATA[Cette page ou action requiert le mot de passe administratif. Il ne vous sera demandé qu’une seule fois par session. Si vous avez oublié le mot de passe administratif, vous pouvez le réinitialiser en supprimant le fichier “<em>{@$relativeWcfDir}acp/masterPassword.inc.php</em>” de votre ftp.]]></item>
 		<item name="wcf.acp.masterPassword.error.notEqual"><![CDATA[Les mots de passe ne sont pas identiques.]]></item>
+
 		<item name="wcf.acp.masterPassword.error.notSecure"><![CDATA[Ce mot de passe n’est pas assez sécurisé. Veuillez utiliser 8 caractères minimum, en incluant des lettres minuscules et majuscules, ainsi que des chiffres et caractères spéciaux.]]></item>
 		<item name="wcf.acp.masterPassword.error.notValid"><![CDATA[Le mot de passe est incorrect. Si vous avez oublié le mot de passe administratif, vous pouvez le réinitialiser en supprimant le fichier “<em>{@$relativeWcfDir}acp/masterPassword.inc.php</em>” de votre ftp.]]></item>
 		<item name="wcf.acp.masterPassword.example"><![CDATA[Suggestion]]></item>
 		<item name="wcf.acp.masterPassword.example.set"><![CDATA[Utiliser le mot de passe suggéré]]></item>
 		<item name="wcf.acp.masterPassword.init"><![CDATA[Définir le mot de passe administratif]]></item>
+
 		<item name="wcf.acp.masterPassword.init.description"><![CDATA[Le mot de passe administratif est une protection additionnelle pour les fonctions et données sensibles. Veuillez choisir un mot de passe sécurisé, n’étant ni connu d’une tierce personne, ni utilisé sur un autre site.]]></item>
 	</category>
 	<category name="wcf.acp.menu">
@@ -1304,6 +1327,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.notice.notice"><![CDATA[Note]]></item>
 		<item name="wcf.acp.notice.noticeUseHtml"><![CDATA[Activer le code HTML dans la note]]></item>
 		<item name="wcf.acp.notice.resetIsDismissed"><![CDATA[Les notes disparues qu’un utilisateur à fait disparaitre s’affichent de nouveau]]></item>
+
 		<item name="wcf.acp.notice.resetIsDismissed.description"><![CDATA[La note sera présentée de nouveau pour les utilisateurs qui ont fait disparaître la version précédente. Les clients qui ont fait disparaître la note ne la verront que dans une nouvelle session.]]></item>
 		<item name="wcf.acp.notice.showOrder"><![CDATA[Position]]></item>
 		<item name="wcf.acp.notice.showOrder.description"><![CDATA[Définit l’ordre dans lequel les notes sont affichées.]]></item>
@@ -1312,6 +1336,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.attachment_enable_thumbnails"><![CDATA[Créer des miniatures des images téléversées]]></item>
 		<item name="wcf.acp.option.attachment_retain_dimensions"><![CDATA[Conserver le ratio pour les miniatures]]></item>
 		<item name="wcf.acp.option.attachment_storage"><![CDATA[Emplacement de stockage]]></item>
+
 		<item name="wcf.acp.option.attachment_storage.description"><![CDATA[Veuillez spécifier l’emplacement pour le stockage des fichiers joints. Attention ! Vous devez déplacer les fichiers joints existants vers le nouvel emplacement.]]></item>
 		<item name="wcf.acp.option.attachment_thumbnail_height"><![CDATA[Hauteur des miniatures, en pixels]]></item>
 		<item name="wcf.acp.option.attachment_thumbnail_width"><![CDATA[Largeur des miniatures, en pixels]]></item>
@@ -1474,6 +1499,8 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.github_private_key"><![CDATA[GitHub Client Secret]]></item>
 		<item name="wcf.acp.option.github_public_key"><![CDATA[GitHub Client ID]]></item>
 		<item name="wcf.acp.option.github_public_key.description"><![CDATA[Vous pouvez obtenir vos “Client ID” et “Client Secret” sur le site <a href="{@$__wcf->getPath()}acp/dereferrer.php?url={'https://github.com/settings/applications'|rawurlencode}" class="externalURL">GitHub</a>. L’URL de rappel est: {link controller="GithubAuth" forceFrontend=true appendSession=false}{/link}]]></item>
+		<item name="wcf.acp.option.google_maps_access_user_location"><![CDATA[Use Current User Location]]></item>
+		<item name="wcf.acp.option.google_maps_access_user_location.description"><![CDATA[When entering a location, the current location of the user is used as start point on the map.]]></item>
 		<item name="wcf.acp.option.google_maps_default_latitude"><![CDATA[Position par défaut (Latitude)]]></item>
 		<item name="wcf.acp.option.google_maps_default_longitude"><![CDATA[Position par défaut (Longitude)]]></item>
 		<item name="wcf.acp.option.google_maps_enable_double_click_zoom"><![CDATA[Activer le zoom via double clic]]></item>
@@ -1500,6 +1527,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.gravatar_default_type.retro"><![CDATA[Retro]]></item>
 		<item name="wcf.acp.option.gravatar_default_type.wavatar"><![CDATA[Wavatar]]></item>
 		<item name="wcf.acp.option.http_enable_gzip"><![CDATA[Activer la compression G-zip]]></item>
+
 		<item name="wcf.acp.option.http_enable_gzip.description"><![CDATA[Permet de compresser le contenu envoyé aux membres, permettant de réduire la bande passante et les temps de chargement. N’affecte pas les fichiers, comme par exemple les images.]]></item>
 		<item name="wcf.acp.option.http_enable_no_cache_headers"><![CDATA[Empêcher la mise en cache des pages]]></item>
 		<item name="wcf.acp.option.http_enable_no_cache_headers.description"><![CDATA[Permet d’empêcher les navigateurs de mettre les pages visitées en cache. Augmente la bande passante et la charge serveur.]]></item>
@@ -1546,6 +1574,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.mail_smtp_port"><![CDATA[Port SMTP]]></item>
 		<item name="wcf.acp.option.mail_smtp_user"><![CDATA[Nom d’utilisateur SMTP]]></item>
 		<item name="wcf.acp.option.mail_use_f_param"><![CDATA[Activer le paramètre “-f”]]></item>
+
 		<item name="wcf.acp.option.mail_use_f_param.description"><![CDATA[Certains serveurs nécessitent l’activation du paramètre “-f” (from) pour l’expédition de courriels. Si vous rencontrez des problèmes de courriels non réceptionnés, activez cette option.]]></item>
 		<item name="wcf.acp.option.mail_use_formatted_address"><![CDATA[Utiliser des adresses e-mail formatées]]></item>
 		<item name="wcf.acp.option.mail_use_formatted_address.description"><![CDATA[Les adresses des expéditeurs et destinataires sont formatées ainsi : “Nom &lt;email@domaine.tld&gt;”. Cette option n’est pas prise en charge par tous les serveurs mail, et doit être désactivée en cas de problème.]]></item>
@@ -1657,6 +1686,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.search_results_per_page"><![CDATA[Résultats par page]]></item>
 		<item name="wcf.acp.option.search_use_captcha"><![CDATA[Activer reCAPTCHA pour le formulaire de recherche]]></item>
 		<item name="wcf.acp.option.session_enable_virtualization"><![CDATA[Permettre le partage de session]]></item>
+
 		<item name="wcf.acp.option.session_enable_virtualization.description"><![CDATA[Les utilisateurs peuvent se connecter depuis plusieurs appareils (PC, tablet, smartphone, etc) concurrently, tous les appareils partagent la même session. La désactivation de cette option va restreindre les utilisateurs à être connecté qu’à un seul appareil à la fois, provoquant à chaque connexion la déconnexion sur l’autre appareil. Il n’est pas recommandé de désactiver cette option et vous devez être bien conscient des conséquences si vous décidez de la désactiver.]]></item>
 		<item name="wcf.acp.option.session_timeout"><![CDATA[Durée des sessions]]></item>
 		<item name="wcf.acp.option.session_timeout.description"><![CDATA[Veuillez spécifier la durée des sessions, en secondes.]]></item>
@@ -1675,6 +1705,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.option.twitter_public_key"><![CDATA[Twitter API key]]></item>
 		<item name="wcf.acp.option.twitter_public_key.description"><![CDATA[Vous pouvez obtenir vos “API key” et “API Secret” sur le site <a href="{@$__wcf->getPath()}acp/dereferrer.php?url={'https://dev.twitter.com/apps'|rawurlencode}" class="externalURL">Twitter</a>. L’URL de rappel est: {link controller="TwitterAuth" forceFrontend=true appendSession=false}{/link}]]></item>
 		<item name="wcf.acp.option.url_controller_replacement"><![CDATA[Controller Aliasing]]></item>
+
 		<item name="wcf.acp.option.url_controller_replacement.description"><![CDATA[Vous pouvez renommer les contrôleurs en leur attribuant un alias, veuillez donner un seul alias par ligne. es alias doivent être définis comme "nom-réel=nom-personnalisé» et ne contenir que des minuscules a-z, des chiffres 0-9 et un tiret pour des raisons de compatibilité. Examples:
 <ul class="nativeList">
 	<li>“board-list=forums”, le lien “http://example.com/index.php?board-list/” deviendra “http://example.com/index.php?forums/”</li>
@@ -1694,6 +1725,7 @@ Exemples:<br />
 WBB=WoltLab Burning Board<br />
 ê=e]]></item>
 		<item name="wcf.acp.option.user_authentication_failure_expiration"><![CDATA[Vider les entrées du journal]]></item>
+
 		<item name="wcf.acp.option.user_authentication_failure_expiration.description"><![CDATA[Les journaux de tentatives de connexion infructueuses seront automatiquement vidés après le nombre de jours configurés, augmenter les limites fournira un plus long historique de la charge pour une utilisation accrue de stockage de la base de données.]]></item>
 		<item name="wcf.acp.option.user_authentication_failure_ip_block"><![CDATA[Blocage de connexion (IP)]]></item>
 		<item name="wcf.acp.option.user_authentication_failure_ip_block.description"><![CDATA[Dès qu’il y aura plus que le montant configuré de tentatives infructueuses de la même adresse IP, les adresses IP seront bloquées temporairement.]]></item>
@@ -1770,6 +1802,7 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.option.wbb_post_notification_mail_include_message"><![CDATA[Inclure le message dans les notifications par email]]></item>
 		<item name="wcf.acp.option.wbb_post_notification_mail_include_message.description"><![CDATA[Les notifications pour les discussions suivies, mentions ou citations inclueront le message de l’auteur.]]></item>
 		<item name="wcf.acp.option.wbb_reply_old_thread_warning"><![CDATA[Considérer les discussions comme anciennes après]]></item>
+
 		<item name="wcf.acp.option.wbb_reply_old_thread_warning.description"><![CDATA[Veuillez spécifier le temps, en jours, après lequel les discussions sont considérées comme anciennes. Un membre voulant répondre dans cette discussion sera averti de l’ancienneté de la discussion.]]></item>
 		<item name="wcf.acp.option.wbb_reply_show_posts_max"><![CDATA[Affichage des messages précédents]]></item>
 		<item name="wcf.acp.option.wbb_reply_show_posts_max.description"><![CDATA[Veuillez spécifier le nombre de messages précédents à afficher lors de la création d’une réponse.]]></item>
@@ -1778,7 +1811,9 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.option.wbb_thread_default_post_sort_order.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.wbb_thread_delete_link_cycle"><![CDATA[Suppression automatique des redirections]]></item>
 		<item name="wcf.acp.option.wbb_thread_delete_link_cycle.description"><![CDATA[Veuillez spécifier le temps, en jours, après lequel la redirection laissée par une discussion déplacée doit être supprimée. Entrez 0 pour désactiver cette option.]]></item>
+
 		<item name="wcf.acp.option.wbb_thread_empty_recycle_bin_cycle"><![CDATA[Vidage automatique de la corbeille]]></item>
+
 		<item name="wcf.acp.option.wbb_thread_empty_recycle_bin_cycle.description"><![CDATA[Veuillez spécifier le temps, en jours, après lequel une discussion ou message déplacé dans la corbeille doit être supprimé automatiquement. Entrez 0 pour désactiver cette option.]]></item>
 		<item name="wcf.acp.option.wbb_thread_enable_deleted_post_note"><![CDATA[Afficher une note pour les messages supprimés]]></item>
 		<item name="wcf.acp.option.wbb_thread_enable_deleted_post_note.description"><![CDATA[Les messages mis à la corbeille seront remplacés par une note de suppression.]]></item>
@@ -1867,12 +1902,12 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.package.packageDescription.package9"><![CDATA[Style: Nova]]></item>
 		<item name="wcf.acp.package.packageDir.input"><![CDATA[Répertoire d’installation]]></item>
 		<item name="wcf.acp.package.packageDir.notAvailable"><![CDATA[Le répertoire cible contient déjà une application.]]></item>
-		<item name="wcf.acp.package.packageName.package10"><![CDATA[Concrete]]></item>
-		<item name="wcf.acp.package.packageName.package11"><![CDATA[Telegrafico]]></item>
-		<item name="wcf.acp.package.packageName.package12"><![CDATA[Sideway]]></item>
+
+		
+		
 		<item name="wcf.acp.package.packageName.package7"><![CDATA[Importer]]></item>
-		<item name="wcf.acp.package.packageName.package9"><![CDATA[Nova]]></item>
 		<item name="wcf.acp.package.plugin.installed"><![CDATA[Modules installés]]></item>
+
 		<item name="wcf.acp.package.plugin.title"><![CDATA[Extensions]]></item>
 		<item name="wcf.acp.package.search"><![CDATA[Recherche de module]]></item>
 		<item name="wcf.acp.package.search.conditions"><![CDATA[Rechercher un module]]></item>
@@ -2006,6 +2041,7 @@ WBB=WoltLab Burning Board<br />
 	</category>
 	<category name="wcf.acp.pluginStore">
 		<item name="wcf.acp.pluginStore.api.error"><![CDATA[Erreur {@$status}: Le serveur n’a pas pu traiter votre demande.]]></item>
+
 		<item name="wcf.acp.pluginStore.api.noSSL"><![CDATA[Interroger le Plugin-Store pour aller chercher les produits achetés nécessite une connexion sécurisée.<br /><br />Votre version de PHP a été compilée sans le support OpenSSL nécessaire pour établir des connexions sécurisées, veuillez contacter votre société d’hébergement ou un administrateur système pour résoudre cette lacune.]]></item>
 		<item name="wcf.acp.pluginStore.authorization"><![CDATA[Autorisation requise]]></item>
 		<item name="wcf.acp.pluginStore.authorization.credentials"><![CDATA[Identifiants]]></item>
@@ -2043,6 +2079,7 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.conversation.description"><![CDATA[Recompilation des données des conversations.]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.conversation.message"><![CDATA[Recompiler les messages de conversation]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.conversation.message.description"><![CDATA[Recompilation de l’index de recherche des messages de conversation.]]></item>
+
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.like"><![CDATA[Recompiler les données des “J’aime”]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.like.description"><![CDATA[Synchronisation des points d’activité inhérent aux “J’aime”.]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.like.user"><![CDATA[Recompiler les “J’aime”]]></item>
@@ -2051,6 +2088,7 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.statDaily.description"><![CDATA[Reconstruire les statistiques journalières]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.user"><![CDATA[Recompiler les membres]]></item>
 		<item name="wcf.acp.rebuildData.com.woltlab.wcf.user.description"><![CDATA[Recompilation des données des membres, nombre de messages et rangs utilisateur.]]></item>
+
 		<item name="wcf.acp.rebuildData.description"><![CDATA[Afin d’assurer la cohérence des données recompilées, par exemple après une importation de données, il est fortement recommandé d’effectuer toutes les actions dans leur ordre respectif, en partant du haut vers le bas.]]></item>
 	</category>
 	<category name="wcf.acp.search">
@@ -2136,6 +2174,7 @@ WBB=WoltLab Burning Board<br />
 		<item name="wcf.acp.style.add"><![CDATA[Ajouter un thème]]></item>
 		<item name="wcf.acp.style.advanced"><![CDATA[Paramètres avancés]]></item>
 		<item name="wcf.acp.style.advanced.individualLess"><![CDATA[CSS et LESS personnalisé]]></item>
+
 		<item name="wcf.acp.style.advanced.individualLess.description"><![CDATA[Le contenu sera ajouté à la feuille de style. Vous pouvez utiliser du CSS et LESS, incluant toutes les mixins par défaut du Community Framework. Pour plus d’information sur le LESS, veuillez vous référer au site officiel (Anglais): <a href="{@$__wcf->getPath()}acp/dereferrer.php?url={'http://lesscss.org/'|rawurlencode}" class="externalURL">LESS</a>.]]></item>
 		<item name="wcf.acp.style.advanced.overrideLess"><![CDATA[Variables LESS de substitution]]></item>
 		<item name="wcf.acp.style.advanced.overrideLess.description"><![CDATA[Permet de créer des variables de substitution LESS n’étant pas incluses de base. Syntaxe: “@nomDeLaVariable: valeurDeLaVariable;”.]]></item>
@@ -2286,6 +2325,8 @@ WBB=WoltLab Burning Board<br />
 	<category name="wcf.acp.user">
 		<item name="wcf.acp.user.activation.mail"><![CDATA[Cher(ère) {@$username},
 
+
+		
 Votre compte sur le site: {@PAGE_TITLE|language} a été approuvé par un administrateur.
 Vous pouvez maintenant accéder au site complet.]]></item>
 		<item name="wcf.acp.user.activation.mail.subject"><![CDATA[Votre compte sur le site: {@PAGE_TITLE|language} a été approuvé]]></item>
@@ -2328,6 +2369,7 @@ Vous pouvez maintenant accéder au site complet.]]></item>
 		<item name="wcf.acp.user.disableSignature.neverExpires"><![CDATA[Blocage permanent]]></item>
 		<item name="wcf.acp.user.disableSignatureReason"><![CDATA[Motif]]></item>
 		<item name="wcf.acp.user.edit"><![CDATA[Modifier le compte d’un membre]]></item>
+
 		<item name="wcf.acp.user.edit.warning.selfEdit"><![CDATA[Attention! Vous modifiez votre propre compte utilisateur, et ces modifications pourraient vous bloquer l’accès au panneau de contrôle administratif.]]></item>
 		<item name="wcf.acp.user.enable"><![CDATA[Activer]]></item>
 		<item name="wcf.acp.user.exportEmailAddress"><![CDATA[Exporter les adresses mail]]></item>
@@ -2351,6 +2393,7 @@ Vous pouvez maintenant accéder au site complet.]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings"><![CDATA[Paramètres de notification par défaut]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.applyChangesToExistingUsers"><![CDATA[Appliquer aussi les changements aux utilisateurs existants]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.applyChangesToExistingUsers.description"><![CDATA[Toutes les modifications aux paramètres de notification par défaut seront appliquées aux utilisateurs existants. Cela remplace tous les paramètres affectés précédemment modifiés respectivement par les utilisateurs eux-même.]]></item>
+
 		<item name="wcf.acp.user.notificationPresetSettings.description"><![CDATA[Vous pouvez définir les paramètres de notification par défaut pour les nouveaux utilisateurs, les modifications apportées ici n’affectent les utilisateurs existants. Les utilisateurs peuvent personnaliser leurs paramètres à tout moment.]]></item>
 		<item name="wcf.acp.user.option.access"><![CDATA[Accès]]></item>
 		<item name="wcf.acp.user.option.add"><![CDATA[Ajouter un champ de profil]]></item>
@@ -2423,6 +2466,7 @@ Vous pouvez maintenant accéder au site complet.]]></item>
 		<item name="wcf.acp.user.revertChanges"><![CDATA[Revenir sur les changements du contenu]]></item>
 		<item name="wcf.acp.user.revertChanges.markedUsers"><![CDATA[Revenir sur les changements des utilisateurs suivants]]></item>
 		<item name="wcf.acp.user.revertChanges.timeframe"><![CDATA[Délai]]></item>
+
 		<item name="wcf.acp.user.revertChanges.timeframe.description"><![CDATA[Les modifications apportées dans ce délai seront revenues à la nouvelle version qui est plus ou moins ancienne que le délai donné ou fait par un utilisateur sans rapport [temps en jours]]]></item>
 		<item name="wcf.acp.user.search"><![CDATA[Recherche de membres]]></item>
 		<item name="wcf.acp.user.search.conditions"><![CDATA[Conditions]]></item>
@@ -2448,6 +2492,7 @@ Vous pouvez maintenant accéder au site complet.]]></item>
 		<item name="wcf.acp.user.sendMail.from"><![CDATA[Expéditeur]]></item>
 		<item name="wcf.acp.user.sendMail.from.description"><![CDATA[Veuillez spécifier l’adresse mail de l’expéditeur.{if MAIL_USE_FORMATTED_ADDRESS} Il est possible d’utiliser le format suivant:{/if}<br />
 {if MAIL_USE_FORMATTED_ADDRESS}<em>Nom d’expéditeur &lt;email@exemple.com&gt;</em><br />{/if}
+
 Vous pouvez définir l’expéditeur par défaut sous: <em>Système -&gt; Options -&gt; Général -&gt; Courriels</em>. L’adresse mail de l’expéditeur doit être connue du serveur si vous utilisez le protocole SMTP, sinon elle sera rejetée.]]></item>
 		<item name="wcf.acp.user.sendMail.group"><![CDATA[Envoyer un courriel par groupe d’utilisateurs]]></item>
 		<item name="wcf.acp.user.sendMail.groups"><![CDATA[Envoyer un courriel aux membres des groupes d’utilisateurs suivants]]></item>
@@ -2457,6 +2502,8 @@ Vous pouvez définir l’expéditeur par défaut sous: <em>Système -&gt; Option
 		<item name="wcf.acp.user.sendMail.text"><![CDATA[Texte]]></item>
 		<item name="wcf.acp.user.sendNewPassword.mail"><![CDATA[Cher(ère) {@$username},
 
+
+		
 Votre mot de passe a été changé par un administrateur.
 Votre nouveau mot de passe est: {$password}
 
@@ -2549,6 +2596,7 @@ Extensions de fichier autorisées: {', '|implode:$attachmentHandler->getFormatte
 		<item name="wcf.bbcode.code.text"><![CDATA[{@$highlighterTitle} ({#$lines} ligne{if $lines != 1}s{/if})]]></item>
 		<item name="wcf.bbcode.code.tpl.title"><![CDATA[Smarty-Template]]></item>
 		<item name="wcf.bbcode.code.xml.title"><![CDATA[Code source XML]]></item>
+
 		<item name="wcf.bbcode.quote.edit"><![CDATA[Editer la citation]]></item>
 		<item name="wcf.bbcode.quote.edit.author"><![CDATA[Auteur]]></item>
 		<item name="wcf.bbcode.quote.edit.link"><![CDATA[Source]]></item>
@@ -2597,6 +2645,9 @@ Extensions de fichier autorisées: {', '|implode:$attachmentHandler->getFormatte
 		<item name="wcf.cli.help.disableUpdateCheck"><![CDATA[Ne pas vérifier les mises à jour après connexion.]]></item>
 		<item name="wcf.cli.help.exitOnFail"><![CDATA[Quitter le script si une erreur se produit.]]></item>
 		<item name="wcf.cli.help.exitOnFail.description"><![CDATA[Si ce paramètre est défini, l’exécution du script sera arrêtée si une erreur se produit.
+
+		
+		
 Les erreurs sont:
 - Commandes manquantes
 - Échecs des commandes
@@ -3149,6 +3200,7 @@ Les erreurs sont:
 		<item name="wcf.infraction.warning.object"><![CDATA[Contenu]]></item>
 		<item name="wcf.infraction.warning.objectInformation"><![CDATA[Détails]]></item>
 		<item name="wcf.infraction.warning.points"><![CDATA[Points]]></item>
+
 		<item name="wcf.infraction.warning.points.description"><![CDATA[Nombre de points à ajouter au cumul de points d’avertissement du membre. Une suspension sera infligée lorsque les points d’avertissement atteindront le total requis.]]></item>
 		<item name="wcf.infraction.warning.predefined"><![CDATA[Avertissement prédéfini]]></item>
 		<item name="wcf.infraction.warning.reason"><![CDATA[Motif]]></item>
@@ -3247,6 +3299,7 @@ Les erreurs sont:
 		<item name="wcf.message.share.permalink.bbcode"><![CDATA[BBCode]]></item>
 		<item name="wcf.message.share.permalink.html"><![CDATA[HTML]]></item>
 		<item name="wcf.message.share.privacy"><![CDATA[Paramètres de vie privée]]></item>
+
 		<item name="wcf.message.share.privacy.description"><![CDATA[L’affichage du nombre de partages n’est disponible que pour les fournisseurs activés, les données seront récupérées directement en utilisant votre navigateur.]]></item>
 		<item name="wcf.message.share.reddit"><![CDATA[Reddit]]></item>
 		<item name="wcf.message.share.twitter"><![CDATA[Twitter]]></item>
@@ -3385,6 +3438,7 @@ Les erreurs sont:
 		<item name="wcf.page.cookiePolicy.info"><![CDATA[Ce site utilise des cookies. En continuant à naviguer sur ce site, vous acceptez l’utilisation des cookies. <a href="{link controller='CookiePolicy'}{/link}">Plus de détails</a>]]></item>
 		<item name="wcf.page.cookiePolicy.text"><![CDATA[<p>This website uses cookies required to operate and use this site. Below you will find an explanation on our cookie usage.</p>
 
+
 <h2>What are cookies</h2>
 <p>Cookies are small text files which a website may put on your computer or mobile device when you first visit a site or page. The cookie will help the website, or another website, to recognise your device the next time you visit. There are many functions cookies serve, for example they can help us to remember your username and preferences.</p>
 
@@ -3405,6 +3459,7 @@ Les erreurs sont:
 <li><a href="http://support.apple.com/kb/ph11920" class="externalURL" rel="nofollow">Safari</a></li>
 <li><a href="http://windows.microsoft.com/en-US/internet-explorer/delete-manage-cookies" class="externalURL" rel="nofollow">Windows Internet Explorer</a></li>
 </ul>]]></item>
+
 		<item name="wcf.page.javascriptDisabled"><![CDATA[Le JavaScript de votre navigateur est désactivé. Si vous souhaitez utiliser toutes les fonctionnalités de ce site, il est obligatoire d’activer le JavaScript.]]></item>
 		<item name="wcf.page.mainMenu"><![CDATA[Navigation]]></item>
 		<item name="wcf.page.offline"><![CDATA[Le site est actuellement en maintenance{if OFFLINE_MESSAGE != ''}:{else}.{/if}]]></item>
@@ -3544,6 +3599,7 @@ Les erreurs sont:
 	</category>
 	<category name="wcf.recaptcha">
 		<item name="wcf.recaptcha.audio"><![CDATA[Version audio]]></item>
+
 		<item name="wcf.recaptcha.description"><![CDATA[Veuillez recopier les lettres de l’image ci-dessous (non sensible à la casse). Si vous n’arrivez pas à identifier le code, veuillez contacter l’administrateur.]]></item>
 		<item name="wcf.recaptcha.error.recaptchaString.false"><![CDATA[Le code de sécurité n’est pas correct. Veuillez rééssayer.]]></item>
 		<item name="wcf.recaptcha.help"><![CDATA[Aide]]></item>
@@ -3584,7 +3640,7 @@ Les erreurs sont:
 		<item name="wcf.style.colorPicker.new"><![CDATA[nouveau]]></item>
 		<item name="wcf.style.currentStyle"><![CDATA[Thème actuel]]></item>
 		<item name="wcf.style.styleDescription1"><![CDATA[]]></item>
-		<item name="wcf.style.styleDescription17"><![CDATA[]]></item>
+
 		<item name="wcf.style.styleDescription2"><![CDATA[The WCF Basic style is the default style of WCF.]]></item>
 	</category>
 	<category name="wcf.tagging">
@@ -3638,22 +3694,29 @@ Les erreurs sont:
 		<item name="wcf.user.button.unignore"><![CDATA[Débloquer]]></item>
 		<item name="wcf.user.changeEmail"><![CDATA[Modification d’adresse mail]]></item>
 		<item name="wcf.user.changeEmail.needReactivation"><![CDATA[Votre nouvelle adresse mail doit être activée. Vous devriez recevoir un courriel de d’activation à votre nouvelle adresse sous peu. Suivez le lien contenu dans ce courriel pour activer votre nouvelle adresse.]]></item>
+
 		<item name="wcf.user.changeEmail.needReactivation.mail"><![CDATA[Bonjour {@$username},
 
 vous avez modifié votre adresse mail sur: {@PAGE_TITLE|language}. Il est nécessaire de suivre le lien ci-dessous afin d’activer votre nouvelle adresse mail.
+
 
 {link controller='EmailActivation' isEmail=true}u={@$userID}&a={@$activationCode}{/link}
 
 **** Le lien ci-dessus ne fonctionne pas ? ****
 Veuillez suivre le lien ci-dessous:
+
+
 {link controller='EmailActivation' isEmail=true}{/link}
 
 et recopiez les informations suivantes dans le formulaire d’activation:
 
+
 Votre numéro de membre: 		{@$userID}
+
 Votre code d’activation: 	{@$activationCode}
 
 Si vous n’arrivez pas à activer votre nouvelle adresse mail, veuillez contacter l’administrateur du site: {@MAIL_ADMIN_ADDRESS}]]></item>
+
 		<item name="wcf.user.changeEmail.needReactivation.mail.subject"><![CDATA[{@PAGE_TITLE|language}: Activation de votre adresse mail]]></item>
 		<item name="wcf.user.changeEmail.success"><![CDATA[Votre adresse mail a été modifiée.]]></item>
 		<item name="wcf.user.changePassword"><![CDATA[Modification de mot de passe]]></item>
@@ -3707,6 +3770,7 @@ Si vous n’arrivez pas à activer votre nouvelle adresse mail, veuillez contact
 		<item name="wcf.user.login.action.login"><![CDATA[Oui, mon mot de passe est:]]></item>
 		<item name="wcf.user.login.action.register"><![CDATA[Non, m’inscrire maintenant.]]></item>
 		<item name="wcf.user.login.blocked"><![CDATA[Il y a eu beaucoup de tentatives de connexion échouées depuis votre adresse IP, vos tentatives de connexion seront rejetées temporairement pour des raisons de sécurité. Veuillez réessayer plus tard!]]></item>
+
 		<item name="wcf.user.login.data"><![CDATA[Identifiants]]></item>
 		<item name="wcf.user.login.redirect"><![CDATA[Vous avez bien été connecté.]]></item>
 		<item name="wcf.user.loginOrRegister"><![CDATA[Se connecter{if !REGISTER_DISABLED} ou s’inscrire{/if}]]></item>
@@ -3715,12 +3779,15 @@ Si vous n’arrivez pas à activer votre nouvelle adresse mail, veuillez contact
 		<item name="wcf.user.logout.sure"><![CDATA[Souhaitez-vous vraiment vous déconnecter ?]]></item>
 		<item name="wcf.user.lostPassword"><![CDATA[Réinitialiser mon mot de passe]]></item>
 		<item name="wcf.user.lostPassword.description"><![CDATA[Veuillez fournir votre nom d’utilisateur ou votre adresse mail pour la réinitialisation de votre mot de passe. Contactez l’administrateur si vous désirez de l’aide.]]></item>
+
 		<item name="wcf.user.lostPassword.email.error.notFound"><![CDATA[“{$email}” n’est utilisé par aucun membre]]></item>
 		<item name="wcf.user.lostPassword.error.tooManyRequests"><![CDATA[Une demande de réinitialisation de mot de passe a été faite dans les dernières 24 heures. Pour des raisons de sécurité veuillez patienter {#$hours} heure{if $hours != 1}s{/if} avant toute nouvelle demande.]]></item>
 		<item name="wcf.user.lostPassword.mail"><![CDATA[Bonjour {@$username},
 
+
 si vous avez oublié votre mot de passe, vous pouvez le réinitialiser en suivant le lien ci-dessous.
 Réinitialiser mon mot de passe: {link controller='NewPassword' isEmail=true}u={@$userID}&k={@$key}{/link}
+
 
 Si vous n’avez pas fait de demande de réinitialisation de votre mot de passe, veuillez ignorer ce courriel.]]></item>
 		<item name="wcf.user.lostPassword.mail.sent"><![CDATA[Vous devriez recevoir un courriel sous peu.]]></item>
@@ -3745,6 +3812,8 @@ Si vous n’avez pas fait de demande de réinitialisation de votre mot de passe,
 Votre nouveau mot de passe pour "{@PAGE_TITLE|language}" est:
 {@$newPassword}
 
+
+
 Vous pouvez modifier votre mot de passe à tout moment à l’adresse suivante:
 {link controller='AccountManagement' isEmail=true}{/link}]]></item>
 		<item name="wcf.user.newPassword.mail.subject"><![CDATA[{@PAGE_TITLE|language}: Nouveau mot de passe]]></item>
@@ -3766,6 +3835,7 @@ Vous pouvez modifier votre mot de passe à tout moment à l’adresse suivante:
 		<item name="wcf.user.password.description"><![CDATA[{if REGISTER_ENABLE_PASSWORD_SECURITY_CHECK && REGISTER_PASSWORD_MIN_LENGTH}Le mot de passe doit contenir {REGISTER_PASSWORD_MIN_LENGTH} caractères minimum.{else}Un mot de passe sécurisé doit contenir au minimum 8 caractères.{/if}]]></item>
 		<item name="wcf.user.password.error.false"><![CDATA[Le mot de passe est erroné]]></item>
 		<item name="wcf.user.password.error.notSecure"><![CDATA[Pour des raisons de sécurité chaque mot de passe doit contenir au moins {REGISTER_PASSWORD_MIN_LENGTH} caractères{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR}{*
+		
 		*} être composé de {*
 		*}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}lettres minuscules{/if}{*
 		*}{if REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR},{else} et de{/if} {/if}lettres majuscules{/if}{*
@@ -3870,6 +3940,7 @@ Vous pouvez modifier votre mot de passe à tout moment à l’adresse suivante:
 		<item name="wcf.user.avatar.error.disabled"><![CDATA[L’administrateur {if $__wcf->user->avatarID || $__wcf->user->enableGravatar}a désactivé votre avatar et {/if}ne vous autorise plus à avoir un avatar{if $__wcf->user->disableAvatarReason}: {$__wcf->user->disableAvatarReason}{/if}.]]></item>
 		<item name="wcf.user.avatar.type.custom"><![CDATA[Téléverser un avatar]]></item>
 		<item name="wcf.user.avatar.type.custom.crop"><![CDATA[Redimmensionner l’avatar]]></item>
+
 		<item name="wcf.user.avatar.type.custom.crop.description"><![CDATA[La version redimmensionnée de votre avatar est basée sur une découpe carrée. Vous pouvez spécifier une découpe personnalisée en appuyant sur le bouton de votre souris et en déplaçant la zone en surbrillance sur la position désirée.]]></item>
 		<item name="wcf.user.avatar.type.custom.description"><![CDATA[Vous pouvez utiliser les extensions de fichier “{"\n"|str_replace:', ':$__wcf->session->getPermission('user.profile.avatar.allowedFileExtensions')}” pour un poids maximum de {@$__wcf->session->getPermission('user.profile.avatar.maxSize')|filesize}. Les dimensions minimales sont de 48×48 pixels, mais il est recommandé d’utiliser des dimensions de {@MAX_AVATAR_WIDTH}×{@MAX_AVATAR_HEIGHT} pixels. Si l’avatar dépasse les valeurs préconisées, il sera redimmensionné dans la mesure du possible.]]></item>
 		<item name="wcf.user.avatar.type.gravatar"><![CDATA[Utiliser un Gravatar]]></item>
@@ -4033,19 +4104,23 @@ Vous pouvez modifier votre mot de passe à tout moment à l’adresse suivante:
 		<item name="wcf.user.notification.follow.title.stacked"><![CDATA[{#$count} nouveau(x) abonné(s)]]></item>
 		<item name="wcf.user.notification.mail.daily.footer"><![CDATA[Ceci est une notifiaction automatique, MERCI DE NE PAS RÉPONDRE À CE COURRIEL!
 
+
 Vous pouvez gérer vos paramètres de notification pour {@PAGE_TITLE|language} à l’adresse suivante:
 {link controller='NotificationSettings' isEmail=true}{/link}
 
 Si vous ne souhaitez plus recevoir de courriel pour ce type de notification, vous pouvez désactiver cette fonction à l’adresse suivante:
+
 {link controller='NotificationDisable' isEmail=true}userID={@$user->userID}&token={@$token}{/link}]]></item>
 		<item name="wcf.user.notification.mail.daily.subject"><![CDATA[{if $count == 1}Nouvelle notification{else}{#$count} nouvelles notifications{/if}]]></item>
 		<item name="wcf.user.notification.mail.disabled"><![CDATA[La notification par courriel a été désactivée.]]></item>
 		<item name="wcf.user.notification.mail.footer"><![CDATA[Ceci est une notifiaction automatique, MERCI DE NE PAS RÉPONDRE À CE COURRIEL!
 
+
 Vous pouvez gérer vos paramètres de notification pour {@PAGE_TITLE|language} à l’adresse suivante:
 {link controller='NotificationSettings' isEmail=true}{/link}
 
 Si vous ne souhaitez plus recevoir de courriel pour ce type de notification, vous pouvez désactiver cette fonction à l’adresse suivante:
+
 {link controller='NotificationDisable' isEmail=true}eventID={@$notification->eventID}&userID={@$user->userID}&token={@$token}{/link}]]></item>
 		<item name="wcf.user.notification.mail.header"><![CDATA[Bonjour {@$user->username},]]></item>
 		<item name="wcf.user.notification.mail.subject"><![CDATA[Nouvelle notification: {@$title}]]></item>
@@ -4168,38 +4243,62 @@ Si vous ne souhaitez plus recevoir de courriel pour ce type de notification, vou
 	<category name="wcf.user.register">
 		<item name="wcf.user.register"><![CDATA[Inscription]]></item>
 		<item name="wcf.user.register.awaitActivation"><![CDATA[Merci pour votre inscription, {$user->username}.<br />
+
+		
 Votre compte est en attente d’activation, qui sera faite par un administrateur.<br />
 Un courriel vous sera envoyé lorsque l’activation sera effective.]]></item>
 		<item name="wcf.user.register.disclaimer"><![CDATA[Règlement]]></item>
 		<item name="wcf.user.register.disclaimer.accept"><![CDATA[Accepter]]></item>
 		<item name="wcf.user.register.disclaimer.decline"><![CDATA[Refuser]]></item>
-		<item name="wcf.user.register.disclaimer.text"><![CDATA[<p>L’inscription ainsi que l’utilisation de ce forum sont gratuits. Appuyez sur “J’accepte” si vous acceptez les règles édictées ci-dessous. Il vous sera alors possible de vous inscrire.</p>
 
-<p>Même si les administrateurs et modérateurs de “{@PAGE_TITLE|language}” font leur possible pour supprimer tout contenu indésirable, il est impossible de tout vérifier au moment de la création du contenu. Le contenu créé exprime les opinions de leur auteurs, et le propriétaire de “{@PAGE_TITLE}” ainsi que WoltLab GmbH (les développeurs de Burning Board) ne sont en aucun cas responsables des contenus et messages.</p>
 
-<p>En vous inscrivant, vous vous engagez à ne pas créer de message vulgaire, impolis, irrespectueux ou exprimant des points de vue politique extrèmes ou offenses verbales.</p>
 
-<p>Sachez enfin que les administrateurs et modérateurs de ce forum peuvent modifier ou supprimer vos contenus s'ils estiment que le contenu de ceux-ci ne conviennent pas à la charte du forum.</p>
 
-<p>Bon séjour sur {@PAGE_TITLE}!</p>]]></item>
+
+
+
+		<item name="wcf.user.register.disclaimer.text"><![CDATA[<h2>Limitation of liability for internal content</h2>
+    <p>The content of our website has been compiled with meticulous care and to the best of our knowledge. However, we cannot assume any liability for the up-to-dateness, completeness or accuracy of any of the pages.</p>
+	<p>Pursuant to section 7, para. 1 of the TMG (Telemediengesetz – Tele Media Act by German law), we as service providers are liable for our own content on these pages in accordance with general laws. However, pursuant to sections 8 to 10 of the TMG, we as service providers are not under obligation to monitor external information provided or stored on our website. Once we have become aware of a specific infringement of the law, we will immediately remove the content in question. Any liability concerning this matter can only be assumed from the point in time at which the infringement becomes known to us.</p>
+    <h2>Limitation of liability for external links</h2>
+    <p>Our website contains links to the websites of third parties (“external links”). As the content of these websites is not under our control, we cannot assume any liability for such external content. In all cases, the provider of information of the linked websites is liable for the content and accuracy of the information provided. At the point in time when the links were placed, no infringements of the law were recognisable to us. As soon as an infringement of the law becomes known to us, we will immediately remove the link in question.</p>
+    <h2>Copyright</h2>
+    <p>The content and works published on this website are governed by the copyright laws of Germany. Any duplication, processing, distribution or any form of utilisation beyond the scope of copyright law shall require the prior written consent of the author or authors in question.</p>
+    <h2>Data protection</h2>
+    <p>A visit to our website can result in the storage on our server of information about the access (date, time, page accessed). This does not represent any analysis of personal data (e.g., name, address or e-mail address). If personal data are collected, this only occurs – to the extent possible – with the prior consent of the user of the website. Any forwarding of the data to third parties without the express consent of the user shall not take place.</p>
+    <p>We would like to expressly point out that the transmission of data via the Internet (e.g., by e-mail) can offer security vulnerabilities. It is therefore impossible to safeguard the data completely against access by third parties. We cannot assume any liability for damages arising as a result of such security vulnerabilities.</p>
+    <p>The use by third parties of all published contact details for the purpose of advertising is expressly excluded. We reserve the right to take legal steps in the case of the unsolicited sending of advertising information; e.g., by means of spam mail.</p>
+<p><small><em>Source: <a href="http://www.mustervorlage.net/disclaimer-muster" class="externalURL">Mustervorlage.net</a></em></small></p>]]></item>
 		<item name="wcf.user.register.error.disabled"><![CDATA[Les inscriptions sont actuellement désactivées.]]></item>
 		<item name="wcf.user.register.needActivation"><![CDATA[Votre compte n’est pas encore activé. Veuillez finaliser le <a href="{link controller='RegisterActivation'}{/link}">processus d’activation</a> s’il vous plait.]]></item>
-		<item name="wcf.user.register.needActivation.mail"><![CDATA[Bonjour {@$user->username},
+		<item name="wcf.user.register.needActivation.mail"><![CDATA[Cher(ère) {@$user->username},
 
-merci de votre inscription sur notre site, {@PAGE_TITLE|language}.
-Il ne vous reste plus qu’à confirmer votre adresse mail pour activer votre compte.
 
-Veuillez suivre le lien ci-dessous:
-{link controller='RegisterActivation' isEmail=true}{/link}
 
-et recopiez les informations suivantes dans le formulaire d’activation:
 
-Votre nom d’utilisateur: 		{@$user->username}
-Votre code d’activation: 	{@$user->activationCode}
 
-Si vous n’arrivez pas à activer votre compte, veuillez contacter l’administrateur du site: {@MAIL_ADMIN_ADDRESS}
+merci pour votre inscription sur notre site: {@PAGE_TITLE|language}. Vous devez cliquer sur le lien ci-dessous pour vérifier votre adresse email. 
 
-Vous pouvez ignorer ce courriel si vous ne vous êtes pas inscrit sur notre site, {@PAGE_TITLE|language}.]]></item>
+
+
+{link controller='RegisterActivation' isEmail=true}u={@$user->userID}&a={@$user->activationCode}{/link} 
+
+
+**** Vous n’arrivez pas à cliquer sur le lien? ****
+Veuillez ouvrir le lien ci-dessous dans votre navigateur:
+{link controller='RegisterActivation' isEmail=true}{/link} 
+
+
+Vous devrez ensuite fournir les informations ci-dessous:
+
+Votre nom d’utilisateur: 		{@$user->username} 
+Le code d’activation: 	{@$user->activationCode} 
+
+
+Si vous ne pouvez pas ouvrir le lien ou si vous avez des problème avec les instructions fournies, veuillez contacter un administrateur: {@MAIL_ADMIN_ADDRESS} 
+
+
+Vous pouvez ignorer cet email si vous ne vous êtes pas inscrit(e) sur notre site: {@PAGE_TITLE|language}.]]></item>
 		<item name="wcf.user.register.needActivation.mail.subject"><![CDATA[Activation de votre compte sur {@PAGE_TITLE|language}]]></item>
 		<item name="wcf.user.register.notification.mail"><![CDATA[Cher administrateur,
 
@@ -4207,11 +4306,13 @@ Un nouvel utilisateur s’est inscrit sur votre site {@PAGE_TITLE|language}: {@$
 
 Adresse mail utilisée: {@$user->email}
 
+
 Le lien ci-dessous permet d’accéder au profil du nouveau membre:
 {link controller='User' object=$user isEmail=true}{/link}]]></item>
 		<item name="wcf.user.register.notification.mail.subject"><![CDATA[Nouvelle inscription sur {@PAGE_TITLE|language}]]></item>
 		<item name="wcf.user.register.success"><![CDATA[Merci de votre inscription, {$user->username}.<br />
-Votre inscrition est finalisée.]]></item>
+
+		Votre inscrition est finalisée.]]></item>
 	</category>
 	<category name="wcf.user.usersOnline">
 		<item name="wcf.user.usersOnline"><![CDATA[Utilisateurs en ligne]]></item>
