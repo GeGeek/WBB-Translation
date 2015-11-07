@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="fr">
+	<category name="calendar.acp.menu">
+		<item name="calendar.acp.menu.link.calendar"><![CDATA[Calendrier]]></item>
+		<item name="calendar.acp.menu.link.calendar.category.list"><![CDATA[Liste des catégories]]></item>
+		<item name="calendar.acp.menu.link.calendar.category.add"><![CDATA[Ajouter une catégorie]]></item>
+	</category>
+	<category name="calendar.category">
+		<item name="calendar.category.button.export"><![CDATA[Exporter les événements (iCal)]]></item>
+		<item name="calendar.category.delete.sure"><![CDATA[Voulez-vous vraiment supprimer cette catégorie? Toutes les sous-catégories de cette catégorie seront déplacées vers la catégorie mère de cette catégorie. Les événements qui sont uniquement dans cette catégorie seront supprimés.]]></item>
+		<item name="calendar.category.export.download"><![CDATA[Télécharger comme fichier]]></item>
+		<item name="calendar.category.export.url"><![CDATA[URL]]></item>
+		<item name="calendar.category.export.url.description"><![CDATA[Vous pouvez utiliser cette URL pour vous abonner avec votre logiciel de calendrier préférée.]]></item>
+	</category>
+	
+	<category name="calendar.date">
+		<item name="calendar.date.week.weekNumber"><![CDATA[Semaine {@$weekNumber}]]></item>
+		<item name="calendar.date.fullDay"><![CDATA[journée complète]]></item>
+		<item name="calendar.date.birthday.count"><![CDATA[{#$day->getBirthdayCount()} anniversaire{if $day->getBirthdayCount() != 1}s{/if}]]></item>
+		<item name="calendar.date.birthdays"><![CDATA[Anniversaires]]></item>
+		<item name="calendar.date.birthday.title"><![CDATA[Anniversaire {@$day->getFormattedDate()}]]></item>
+		<item name="calendar.date.today"><![CDATA[Aujourd’hui]]></item>
+		<item name="calendar.date.dateFormat"><![CDATA[j F Y]]></item>
+		<item name="calendar.date.time.fromTo"><![CDATA[{@$startTime} - {@$endTime}]]></item>
+		<item name="calendar.date.time.from"><![CDATA[{@$startTime}]]></item>
+		<item name="calendar.date.time.to"><![CDATA[Jusqu’au {@$endTime}]]></item>
+	</category>
+	
+	<category name="calendar.event">
+		<item name="calendar.event.add"><![CDATA[Ajouter un événement]]></item>
+		<item name="calendar.event.edit"><![CDATA[Modifier un événement]]></item>
+		<item name="calendar.event.information"><![CDATA[Détails]]></item>
+		<item name="calendar.event.generalInformation"><![CDATA[Général]]></item>
+		<item name="calendar.event.categories"><![CDATA[Catégories]]></item>
+		<item name="calendar.event.date"><![CDATA[Date]]></item>
+		<item name="calendar.event.date.isFullDay"><![CDATA[Journée complète]]></item>
+		<item name="calendar.event.date.start"><![CDATA[Début]]></item>
+		<item name="calendar.event.date.start.error.invalid"><![CDATA[Vous avez entré une date de début invalide.]]></item>
+		<item name="calendar.event.date.end"><![CDATA[Fin]]></item>
+		<item name="calendar.event.date.end.error.invalid"><![CDATA[Vous avez entré une date de fin invalide, elle doit dépasser la date de début.]]></item>
+		<item name="calendar.event.date.end.error.tooLong"><![CDATA[Votre événement a dépassé la limite maximale de période de temps, un événement ne peut pas dépasser {#CALENDAR_MAX_EVENT_LENGTH} jours successifs.]]></item>
+		<item name="calendar.event.date.timezone"><![CDATA[Fuseau horaire]]></item>
+		
+		<item name="calendar.event.date.participation"><![CDATA[Gérer les participations]]></item>
+		<item name="calendar.event.date.participation.participate"><![CDATA[Participer]]></item>
+		<item name="calendar.event.date.participation.user"><![CDATA[Participants]]></item>
+		<item name="calendar.event.date.participation.user.description"><![CDATA[Vous pouvez ajouter d’autres utilisateurs en spécifiant leur nom d'utilisateur et en remplissant les champs ci-dessous.]]></item>
+		<item name="calendar.event.date.participation.user.error.alreadyParticipating"><![CDATA[“{$participant->username}” participe déjà à l’évènement.]]></item>
+		<item name="calendar.event.date.participation.decision"><![CDATA[Participation]]></item>
+		<item name="calendar.event.date.participation.decision.yes"><![CDATA[Oui{if !$canParticipate} (impossible){/if}]]></item>
+		<item name="calendar.event.date.participation.decision.no"><![CDATA[Non]]></item>
+		<item name="calendar.event.date.participation.decision.maybe"><![CDATA[Peut-être]]></item>
+		<item name="calendar.event.date.participation.companions"><![CDATA[compagnons]]></item>
+		<item name="calendar.event.date.participation.message"><![CDATA[Commentaire]]></item>
+		<item name="calendar.event.date.participation.message.description"><![CDATA[Vous pouvez éventuellement saisir un commentaire, ce sera affiché dans la liste des participants.]]></item>
+		<item name="calendar.event.date.participation.notChangeable"><![CDATA[L’événement ne vous permet pas de changer votre décision.]]></item>
+		<item name="calendar.event.date.participation.invite"><![CDATA[Inviter]]></item>
+		<item name="calendar.event.date.participation.invite.description"><![CDATA[Saisissez une liste de noms d’utilisateurs que vous souhaitez inviter séparés par des virgules.]]></item>
+		<item name="calendar.event.date.participation.invite.errors"><![CDATA[{if $errors[unknown]|count}Les utilisateurs suivants sont inconnus: {implode from=$errors[unknown] item=user}{$user}{/implode}.{/if}{if $errors[unknown]|count && $errors[participant]|count}<br />{/if}{if $errors[participant]|count}Les utilisateurs suivants sont déjà participants: {implode from=$errors[participant] item=user}{$user}{/implode}.{/if}]]></item>
+		<item name="calendar.event.date.participation.removeParticipant"><![CDATA[Supprimer un participant]]></item>
+		<item name="calendar.event.date.participation.inviteUserGroup.description"><![CDATA[Vous ne pouvez inviter que des groupes d’utilisateurs avec jusqu’à {#CALENDAR_EVENT_INVITE_GROUP_MAX_SIZE} membres.]]></item>
+		<item name="calendar.event.date.participation.removeParticipant"><![CDATA[Supprimer le participant]]></item>
+		<item name="calendar.event.date.participation.removeParticipant.confirmMessage"><![CDATA[Voulez-vous vraiment supprimer “{$participant->username}” de cet événement?]]></item>
+		<item name="calendar.event.date.participation.companions.error.exceededMaxCompanions"><![CDATA[Vous avez dépassé le nombre maximum de compagnons.]]></item>
+		<item name="calendar.event.date.isParticipant"><![CDATA[Vous êtes un participant]]></item>
+		
+		<item name="calendar.event.date.repeat.enable"><![CDATA[Activer les répétitions]]></item>
+		<item name="calendar.event.date.repeat.description"><![CDATA[Répétez cet événement basé sur un modèle.]]></item>
+		<item name="calendar.event.date.repeat.type"><![CDATA[Type]]></item>
+		<item name="calendar.event.date.repeat.type.daily"><![CDATA[Journalier]]></item>
+		<item name="calendar.event.date.repeat.type.weekly"><![CDATA[Hebdomadaire]]></item>
+		<item name="calendar.event.date.repeat.type.monthlyByDayOfMonth"><![CDATA[Mensuellement (jour du mois)]]></item>
+		<item name="calendar.event.date.repeat.type.monthlyByDayOfWeek"><![CDATA[Mensuellement (jour de la semaine)]]></item>
+		<item name="calendar.event.date.repeat.type.yearlyByDayOfMonth"><![CDATA[Annuellement (jour du mois)]]></item>
+		<item name="calendar.event.date.repeat.type.yearlyByDayOfWeek"><![CDATA[Annuellement (jour de la semaine)]]></item>
+		<item name="calendar.event.date.repeat.interval"><![CDATA[Intervalle]]></item>
+		
+		<item name="calendar.event.date.repeat.interval.daily.description"><![CDATA[Répéter chaque jour(s)]]></item>
+		<item name="calendar.event.date.repeat.interval.weekly.description"><![CDATA[Répéter chaque semaine(s)]]></item>
+		<item name="calendar.event.date.repeat.interval.monthly.description"><![CDATA[Répéter chaque mois]]></item>
+		<item name="calendar.event.date.repeat.interval.yearly.description"><![CDATA[Répéter chaque année(s)]]></item>
+		
+		<item name="calendar.event.date.repeat.byDay"><![CDATA[Jour de la semaine]]></item>
+		<item name="calendar.event.date.repeat.byMonthDay"><![CDATA[Jour du mois]]></item>
+		<item name="calendar.event.date.repeat.dayOffset.first"><![CDATA[Premier]]></item>
+		<item name="calendar.event.date.repeat.dayOffset.second"><![CDATA[Second]]></item>
+		<item name="calendar.event.date.repeat.dayOffset.third"><![CDATA[Troisième]]></item>
+		<item name="calendar.event.date.repeat.dayOffset.fourth"><![CDATA[Quatrième]]></item>
+		<item name="calendar.event.date.repeat.dayOffset.last"><![CDATA[Dernier]]></item>
+		
+		<item name="calendar.event.date.repeat.end.type"><![CDATA[Fin de la répétition]]></item>
+		<item name="calendar.event.date.repeat.end.type.unlimited"><![CDATA[Jamais]]></item>
+		<item name="calendar.event.date.repeat.end.type.date"><![CDATA[Date]]></item>
+		<item name="calendar.event.date.repeat.end.type.count"><![CDATA[Nombre de répétitions]]></item>
+		<item name="calendar.event.date.repeat.end.count"><![CDATA[Nombre de répétitions]]></item>
+		<item name="calendar.event.date.repeat.end.date"><![CDATA[Date]]></item>
+		<item name="calendar.event.date.repeat.end.date.error.invalid"><![CDATA[Vous avez entré une date de fin invalide, elle doit dépasser la date de début.]]></item>
+				
+		<item name="calendar.event.categorizedEvents"><![CDATA[Événements par catégorie “{$category->getTitle()}”]]></item>
+		<item name="calendar.event.upcomingEvents"><![CDATA[Événements à venir]]></item>
+		<item name="calendar.event.views"><![CDATA[Vues]]></item>
+		<item name="calendar.event.participants"><![CDATA[Participants]]></item>
+		<item name="calendar.event.participants.description"><![CDATA[Les utilisateurs ci-dessous ont confirmé leur participation:]]></item>
+		<item name="calendar.event.undecidedParticipants"><![CDATA[Les participants indécis]]></item>
+		<item name="calendar.event.undecidedParticipants.description"><![CDATA[Les utilisateurs ci-dessous n'ont pas encore pris une décision explicite:]]></item>
+		<item name="calendar.event.noParticipants"><![CDATA[Aucun participant]]></item>
+		<item name="calendar.event.noParticipants.description"><![CDATA[Les utilisateurs ci-dessous ne participent pas:]]></item>
+		
+		<item name="calendar.event.comments"><![CDATA[Commentaires]]></item>
+		<item name="calendar.event.participant.count"><![CDATA[{#$participants} People]]></item>
+		<item name="calendar.event.message"><![CDATA[Description]]></item>
+		<item name="calendar.event.participation"><![CDATA[Participation]]></item>
+		<item name="calendar.event.participation.enable"><![CDATA[Activer la participation]]></item>
+		<item name="calendar.event.participation.description"><![CDATA[Autoriser les utilisateurs à participer à cet événement.]]></item>
+		
+		<item name="calendar.event.participation.isPublic"><![CDATA[Liste publique des participants]]></item>
+		<item name="calendar.event.participation.isPublic.description"><![CDATA[La liste des participants sera visible pour tout le monde.]]></item>
+		
+		<item name="calendar.event.participation.isChangeable"><![CDATA[Les participants peuvent modifier leur décision]]></item>
+		<item name="calendar.event.participation.isChangeable.description"><![CDATA[Les participants peuvent modifier leur décision à tout moment.]]></item>
+		
+		<item name="calendar.event.participation.maxParticipants"><![CDATA[Nombre maximum de participants]]></item>
+		<item name="calendar.event.participation.maxParticipants.description"><![CDATA[Nombre maximum de participants, le nombre “0” implique une quantité illimitée.]]></item>
+		
+		<item name="calendar.event.participation.maxCompanions"><![CDATA[Nombre maximum de compagnons]]></item>
+		<item name="calendar.event.participation.maxCompanions.description"><![CDATA[Nombre maximum de compagnons pour chaque participant.]]></item>
+		
+		<item name="calendar.event.participation.endTime"><![CDATA[Date de clôture]]></item>
+		<item name="calendar.event.userEvents"><![CDATA[Événements de “{$user->username}”]]></item>
+		<item name="calendar.event.showUserEvents"><![CDATA[Afficher les événements de {$user->username}]]></item>
+		<item name="calendar.event.events"><![CDATA[Événements]]></item>
+		<item name="calendar.event.searchEvents"><![CDATA[Chercher les événements]]></item>
+		<item name="calendar.event.day.count"><![CDATA[{#$eventCount} événement{if $eventCount != 1}s{/if}]]></item>
+		<item name="calendar.event.day.title"><![CDATA[Événements du {@$day->getFormattedDate()}]]></item>
+		<item name="calendar.event.date.next"><![CDATA[Répétition suivante]]></item>
+		<item name="calendar.event.date.previous"><![CDATA[Répétition précédente]]></item>
+		<item name="calendar.event.log.trash.summary"><![CDATA[L’événement a été supprimé par “{if $userID}<a href="{link controller='User' id=$userID title=$username}{/link}" class="userLink" data-user-id="{@$userID}">{$username}</a>{else}{$username}{/if}” {if $additionalData[reason]}pour la raison suivante: „{$additionalData[reason]}“{/if}. ({@$time|time})]]></item>
+		<item name="calendar.event.delete"><![CDATA[Supprimer]]></item>
+		<item name="calendar.event.delete.confirmMessage"><![CDATA[Souhaitez-vous vraiment supprimer cet événement et toutes ses répétitions?]]></item>
+		<item name="calendar.event.disable"><![CDATA[Désactiver]]></item>
+		<item name="calendar.event.enable"><![CDATA[Approuver]]></item>
+		<item name="calendar.event.restore"><![CDATA[Restaurer]]></item>
+		<item name="calendar.event.trash"><![CDATA[Déplacer dans la corbeille]]></item>
+		<item name="calendar.event.trash.confirmMessage"><![CDATA[Souhaitez-vous vraiment déplacer cet événement et toutes ses répétitions dans la corbeille?]]></item>
+		<item name="calendar.event.trash.reason"><![CDATA[Raison (facultatif)]]></item>
+		<item name="calendar.event.setAsFeatured"><![CDATA[Marquer comme “populaire”]]></item>
+		<item name="calendar.event.unsetAsFeatured"><![CDATA[Supprimer la marque “Populaire”]]></item>
+		<item name="calendar.event.moderation.info"><![CDATA[Les événements créés par vous doivent être approuvés manuellement par un modérateur.]]></item>
+		<item name="calendar.event.moderation.redirect"><![CDATA[Événement créé, il sera publié dès qu’un modérateur l’aura approuvé.]]></item>
+		
+		<item name="calendar.event.recentActivity.event"><![CDATA[A créé l’événement <a href="{link application='calendar' controller='Event' object=$event->getFirstEventDate()}{/link}" class="calendarEventLink" data-event-date-id="{@$event->getFirstEventDate()->eventDateID}">{$event->subject}</a>.]]></item>
+		<item name="calendar.event.recentActivity.likedEvent"><![CDATA[A aimé l’événement <a href="{link application='calendar' controller='Event' object=$event->getFirstEventDate()}{/link}" class="calendarEventLink" data-event-date-id="{@$event->getFirstEventDate()->eventDateID}">{$event->subject}</a>.]]></item>
+		<item name="calendar.event.recentActivity.eventDateComment"><![CDATA[A laissé un commentaire sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}{/link}#comments" class="calendarEventLink" data-event-date-id="{@$eventDate->eventDateID}">{$eventDate->getEvent()->subject}</a>.]]></item>
+		<item name="calendar.event.recentActivity.eventDateCommentResponse"><![CDATA[A répondu à un commentaire de <a href="{link controller='User' object=$commentAuthor}{/link}">{$commentAuthor->username}</a> sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}{/link}#comments" class="calendarEventLink" data-event-date-id="{@$eventDate->eventDateID}">{$eventDate->getEvent()->subject}</a>.]]></item>
+		
+		<item name="calendar.event.date.invite.notification.title"><![CDATA[Invitation d’événement]]></item>
+		<item name="calendar.event.date.invite.notification.message"><![CDATA[Vous a invité à l’événement “{$eventDate->getTitle()}” ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.invite.notification.mail"><![CDATA[{@$author->username} vous a invité à l’événement "{@$eventDate->getTitle()}" ({@$eventDate->getFormattedTimeFrame()}):
+{link application='calendar' controller='Event' object=$eventDate isEmail=true}{/link}]]></item>
+		<item name="calendar.event.date.participation.notification.title"><![CDATA[Nouveau participant]]></item>
+		<item name="calendar.event.date.participation.notification.title.stacked"><![CDATA[{#$count} nouveau(x) participant(s)]]></item>
+		<item name="calendar.event.date.participation.notification.message"><![CDATA[{@$author->getAnchorTag()} participe maintenant à l’événement <a href="{link application='calendar' controller='Event' object=$participation->getEventDate()}{/link}">{$participation->getEventDate()->getTitle()}</a> ({$participation->getEventDate()->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.participation.notification.message"><![CDATA[Participe maintenant à l'événement “{$participation->getTitle()}” ({$participation->getEventDate()->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.participation.notification.mail"><![CDATA[{@$author->username} participe maintenant à l’événement "{@$participation->getTitle()}" ({@$participation->getEventDate()->getFormattedTimeFrame()}):
+{link application='calendar' controller='Event' object=$participation->getEventDate() isEmail=true}{/link}]]></item>
+		<item name="calendar.event.date.participation.notification.mail.stacked"><![CDATA[{if $count < 4}{@$authors[0]->username}{if $count == 2} et {else}, {/if}{@$authors[1]->username}{if $count == 3} et {@$authors[2]->username}{/if}{else}{@$authors[0]->username} et {#$others} d’autres{/if} participent maintenant à l’événement "{$participation->getTitle()}" ({$participation->getEventDate()->getFormattedTimeFrame()}):
+{link application='calendar' controller='Event' object=$participation->getEventDate() isEmail=true}{/link}]]></item>
+		<item name="calendar.event.date.comment.notification.title"><![CDATA[Nouveau commentaire (Événements)]]></item>
+
+		<item name="calendar.event.date.comment.notification.title.stacked"><![CDATA[{#$timesTriggered} nouveaux commentaires (Événement)]]></item>
+		<item name="calendar.event.date.comment.notification.message"><![CDATA[A laissé un commentaire sur votre événement “{$eventDate->getEvent()->subject}”.]]></item>
+		<item name="calendar.event.date.comment.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->getAnchorTag()}{/if}{/if}{if $guestTimesTriggered} et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->getAnchorTag()}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont commenté votre événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.comment.notification.mail"><![CDATA[{if $author->userID}{@$author->username}{else}un invité{/if} a commenté votre événement "{@$eventDate->getEvent()->subject}":
+{if $notificationType == 'instant'}
+---------------------------------
+{@$comment->message} 
+---------------------------------
+{/if}{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.comment.notification.mail.stacked"><![CDATA[{if $count < 4}{@$authors[0]->username}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->username}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->username}{/if}{/if}{if $guestTimesTriggered} et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->username}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont commenté votre événement "{@$eventDate->getTitle()}":
+{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.comment.like.notification.title"><![CDATA[Aime un commentaire (Événement)]]></item>
+		<item name="calendar.event.date.comment.like.notification.title.stacked"><![CDATA[{#$count} utilisateurs aiment votre commentaire (Événement)]]></item>
+		<item name="calendar.event.date.comment.like.notification.message"><![CDATA[{@$author->getAnchorTag()} aime votre commentaire sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.comment.like.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count == 2} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3} et {@$authors[2]->getAnchorTag()}{/if}{else}{@$authors[0]->getAnchorTag()} et {#$others} d’autres{/if} like your comment on the event <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.commentResponse.notification.title"><![CDATA[Nouvelle réponse (Événements)]]></item>
+		<item name="calendar.event.date.commentResponse.notification.title.stacked"><![CDATA[{#$timesTriggered} nouvelles réponses (Événement)]]></item>
+		<item name="calendar.event.date.commentResponse.notification.message"><![CDATA[A répondu à votre commentaire sur l’événement “{$eventDate->getEvent()->subject}”.]]></item>
+		<item name="calendar.event.date.commentResponse.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->getAnchorTag()}{/if}{/if}{if $guestTimesTriggered} and {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->getAnchorTag()}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont répondu à votre commentaire sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.commentResponse.notification.mail"><![CDATA[{if $author->userID}{@$author->username}{else}un invité{/if} a répondu à votre commentaire sur l’événement "{@$eventDate->getEvent()->subject}":
+{if $notificationType == 'instant'}
+---------------------------------
+{@$response->message} 
+---------------------------------
+{/if}{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.commentResponse.notification.mail.stacked"><![CDATA[{if $count < 4}{@$authors[0]->username}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->username}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->username}{/if}{/if}{if $guestTimesTriggered} et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->username}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont répondu à votre commentaire sur l’événement "{@$eventDate->getTitle()}":
+{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.commentResponse.like.notification.title"><![CDATA[aime votre réponse au commentaire (Événement)]]></item>
+		<item name="calendar.event.date.commentResponse.like.notification.title.stacked"><![CDATA[{#$count} utilisateurs aiment votre réponse au commentaire (Événement)]]></item>
+		<item name="calendar.event.date.commentResponse.like.notification.message"><![CDATA[{@$author->getAnchorTag()} aime votre réponse au commentaire sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.commentResponse.like.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count == 2} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3} et {@$authors[2]->getAnchorTag()}{/if}{else}{@$authors[0]->getAnchorTag()} et {#$others} d’autres{/if} like your reply to a comment on the event <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.title"><![CDATA[Nouvelle réponse (Événements)]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.title.stacked"><![CDATA[{#$timesTriggered} nouvelles réponses (Événement)]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.message"><![CDATA[A répondu a un commentaire de “{$commentAuthor->username}” sur votre événement “{$eventDate->getEvent()->subject}”.]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->getAnchorTag()}{/if}{/if}{if $guestTimesTriggered} and {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->getAnchorTag()}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont répondu au commentaire de {if $author->userID}<a href="{link controller='User' object=$author}{/link}" class="userLink" data-user-id="{@$author->userID}">{$author->username}</a>{else}{$author->username}{/if} sur votre événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a> ({$eventDate->getFormattedTimeFrame()}).]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.mail"><![CDATA[{if $author->userID}{@$author->username}{else}un invité{/if} a répondu au commentaire de "{@$commentAuthor->username}" sur votre événement "{@$eventDate->getEvent()->subject}":
+{if $notificationType == 'instant'}
+---------------------------------
+{@$response->message} 
+---------------------------------
+{/if}{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.commentResponseOwner.notification.mail.stacked"><![CDATA[{if $count < 4}{@$authors[0]->username}{if $count != 1}{if $count == 2 && !$guestTimesTriggered} et {else}, {/if}{@$authors[1]->username}{if $count == 3}{if !$guestTimesTriggered} et {else}, {/if} {@$authors[2]->username}{/if}{/if}{if $guestTimesTriggered} et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{else}{@$authors[0]->username}{if $guestTimesTriggered},{else} et{/if} {#$others} d’autres utilisateurs {if $guestTimesTriggered}et {if $guestTimesTriggered == 1}un invité{else}des invités{/if}{/if}{/if} ont répondu au commentaire de "{@$commentAuthor->username}" sur votre événement "{@$eventDate->getTitle()}":
+{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.date.notification.title"><![CDATA[Rappel d’événement]]></item>
+		<item name="calendar.event.date.notification.message"><![CDATA[Événement “{$eventDate->getEvent()->subject}” {if $eventDate->startTime < TIME_NOW}a débuté{else}débute{/if} {@$eventDate->startTime|dateDiff|lcfirst}.]]></item>
+		<item name="calendar.event.date.notification.mail"><![CDATA[Événement "{@$eventDate->getEvent()->subject}" de {@$author->username} {if $eventDate->startTime < TIME_NOW}a débuté{else}débute{/if} {@$eventDate->startTime|dateDiff|lcfirst}:
+{link application='calendar' controller='Event' object=$eventDate isEmail=true}#comments{/link}]]></item>
+		<item name="calendar.event.like.notification.title"><![CDATA[Aime votre événement]]></item>
+		<item name="calendar.event.like.notification.title.stacked"><![CDATA[{#$count} utilisateurs aiment votre événement]]></item>
+		<item name="calendar.event.like.notification.message"><![CDATA[{@$author->getAnchorTag()} aime votre événement <a href="{link application='calendar' controller='Event' object=$event->getFirstEventDate()}{/link}">{$event->getTitle()}</a>.]]></item>
+		<item name="calendar.event.like.notification.message.stacked"><![CDATA[{if $count < 4}{@$authors[0]->getAnchorTag()}{if $count == 2} et {else}, {/if}{@$authors[1]->getAnchorTag()}{if $count == 3} et {@$authors[2]->getAnchorTag()}{/if}{else}{@$authors[0]->getAnchorTag()} et {#$others} d’autres{/if} aiment votre événement <a href="{link application='calendar' controller='Event' object=$event->getFirstEventDate()}{/link}">{$event->getTitle()}</a>.]]></item>
+		
+		<item name="calendar.event.date.showAll"><![CDATA[[tous les événements]]]></item>
+		<item name="calendar.event.eventParticipations"><![CDATA[Participations d’événements]]></item>
+		<item name="calendar.event.eventParticipations.decision.yes"><![CDATA[Participe]]></item>
+		<item name="calendar.event.eventParticipations.decision.maybe"><![CDATA[Indécis]]></item>
+		<item name="calendar.event.eventParticipations.decision.no"><![CDATA[Annulé]]></item>
+		<item name="calendar.event.coordinates"><![CDATA[Coordonnées]]></item>
+		<item name="calendar.event.coordinates.enable"><![CDATA[Spécifier le lieu de l’événement]]></item>
+		<item name="calendar.event.coordinates.description"><![CDATA[Vous pouvez spécifier un lieu pour cet événement.]]></item>
+		<item name="calendar.event.coordinates.location"><![CDATA[Lieu]]></item>
+		<item name="calendar.event.coordinates.location.description"><![CDATA[Tapez l’emplacement et sélectionner un résultat à partir des suggestions.]]></item>
+		<item name="calendar.event.enableComments"><![CDATA[Afficher les commentaires]]></item>
+		<item name="calendar.event.enableComments"><![CDATA[Activer les commentaires]]></item>
+		<item name="calendar.event.enableComments.description"><![CDATA[Autoriser les utilisateurs à commenter sur cet événement.]]></item>
+		<item name="calendar.event.map"><![CDATA[Lieu]]></item>
+		<item name="calendar.event.eventsInfoWindow"><![CDATA[Dates multiples]]></item>
+		<item name="calendar.event.eventColor.enable"><![CDATA[Définir la couleur de l’événement]]></item>
+		<item name="calendar.event.eventColor.description"><![CDATA[Marquer les événements avec la couleur choisie sur l’aperçu.]]></item>
+		<item name="calendar.event.eventColor"><![CDATA[Couleur]]></item>
+		<item name="calendar.event.import"><![CDATA[Importer des événements]]></item>
+		<item name="calendar.event.import.description"><![CDATA[Prend en charge l’importation des événements en utilisant le format d’échange vCalendar.]]></item>
+		<item name="calendar.event.import.upload"><![CDATA[Envoyer un fichier]]></item>
+		<item name="calendar.event.import.upload.error.uploadFailed"><![CDATA[L’envoi de fichier a échoué.]]></item>
+		<item name="calendar.event.import.importURL"><![CDATA[Télécharger un fichier (URL)]]></item>
+		<item name="calendar.event.import.importURL.error.uploadFailed"><![CDATA[Le téléchargement du fichier a échoué.]]></item>
+		<item name="calendar.event.import.success"><![CDATA[{#$success} événement{if $success != 1}s{/if} {if $success == 1}importé{else}importés{/if}.]]></item>
+		<item name="calendar.event.categories.error.tooMany"><![CDATA[Vous avez sélectionné trop de catégories. Vous pouvez sélectionner jusqu’à {@CALENDAR_EVENT_MAX_CATEGORIES} {if CALENDAR_EVENT_MAX_CATEGORIES == 1}catégorie{else}catégories{/if}.]]></item>
+		<item name="calendar.event.preset"><![CDATA[L’événement <a href="{link application='calendar' controller='Event' object=$presetEvent->getFirstEventDate()}{/link}">{$presetEvent->getTitle()}</a> est utilisé comme prédéfini, les champs ci-dessous ont été préremplis.]]></item>
+		<item name="calendar.event.useAsPreset"><![CDATA[Utiliser comme prédéfini]]></item>
+		<item name="calendar.event.featured"><![CDATA[Populaire]]></item>
+	</category>
+	
+	<category name="calendar.header">
+		<item name="calendar.header.menu.calendar"><![CDATA[Calendrier]]></item>
+		<item name="calendar.header.menu.calendar.weekly"><![CDATA[Vue de la semaine]]></item>
+		<item name="calendar.header.menu.calendar.daily"><![CDATA[Vue du jour]]></item>
+		<item name="calendar.header.menu.calendar.upcomingEvents"><![CDATA[Événements à venir]]></item>
+		<item name="calendar.header.menu.calendar.participations"><![CDATA[Participations]]></item>
+		<item name="calendar.header.menu.map"><![CDATA[Carte]]></item>
+		<item name="calendar.header.menu.myEvents"><![CDATA[Mes événements]]></item>
+	</category>
+	<category name="calendar.index">
+		<item name="calendar.index.stats"><![CDATA[Statistiques]]></item>
+		<item name="calendar.index.stats.detail"><![CDATA[{#$stats[authors]} Auteur{if $stats[authors] != 1}s{/if} - {#$stats[events]} Événement{if $stats[events] != 1}s{/if} ({#$stats[eventsPerDay]} Événement{if $stats[eventsPerDay] != 1}s{/if} par jour) - {#$stats[comments]} Commentaire{if $stats[comments] != 1}s{/if}]]></item>
+		<item name="calendar.index.copyright"><![CDATA[<a href="http://www.woltlab.com/"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Application du calendrier: <strong>WoltLab Community Calendar&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, developpé par <strong>WoltLab&reg; GmbH</strong></a>]]></item>
+	</category>
+	
+	<category name="calendar.search">
+		<item name="calendar.search.categories"><![CDATA[Chercher dans les catégories]]></item>
+	</category>
+	
+	<category name="calendar.user">
+		<item name="calendar.user.usersOnline.location.CalendarPage"><![CDATA[Calendrier]]></item>
+		<item name="calendar.user.usersOnline.location.WeeklyPage"><![CDATA[Regarde la vue de la semaine]]></item>
+		<item name="calendar.user.usersOnline.location.DailyPage"><![CDATA[Regarde la vue du jour]]></item>
+		<item name="calendar.user.usersOnline.location.UpcomingEventListPage"><![CDATA[Événements à venir]]></item>
+		<item name="calendar.user.usersOnline.location.EventAddForm"><![CDATA[Crée un nouvel événement]]></item>
+		<item name="calendar.user.usersOnline.location.EventPage"><![CDATA[<a href="{link controller='Event' application='calendar' object=$eventDate}{/link}" class="calendarEventLink" data-event-date-id="{@$eventDate->eventDateID}">Événement “{$eventDate->getEvent()->subject}”</a>]]></item>
+		<item name="calendar.user.usersOnline.location.EventEditForm"><![CDATA[Edite un événement <a href="{link controller='Event' application='calendar' object=$event->getFirstEventDate()}{/link}" class="calendarEventLink" data-event-date-id="{@$event->firstEventDateID}">“{$event->subject}”</a>]]></item>
+	</category>
+	
+	<category name="wcf.acl.option">
+		<item name="wcf.acl.option.com.woltlab.calendar.category.canUseCategory"><![CDATA[Peut affecter des événements à cette catégorie]]></item>
+		<item name="wcf.acl.option.com.woltlab.calendar.category.canViewCategory"><![CDATA[Peut voir la catégorie]]></item>
+	</category>
+	
+	<category name="wcf.acp.dataImport">
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event"><![CDATA[Événements]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.category"><![CDATA[Catégories d'événements]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.attachment"><![CDATA[Fichiers joints aux événements]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.date.comment"><![CDATA[Event comments]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.date.participation"><![CDATA[Participants aux événements]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.like"><![CDATA[Aimes des événements]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.like"><![CDATA[Event likes]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.calendar.event.date"><![CDATA[Event dates]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.calendar"><![CDATA[Calendrier]]></item>
+		<item name="wcf.acp.group.option.category.mod.calendar"><![CDATA[Calendrier]]></item>
+		<item name="wcf.acp.group.option.category.admin.calendar"><![CDATA[Calendrier]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canReadEvent"><![CDATA[Peut voir les événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canCreateEvent"><![CDATA[Peut créer des événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canCreateEventWithoutModeration"><![CDATA[Peut créer des événements sans l'approbation préalable]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canEditEvent"><![CDATA[Can edit own events]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canEditEvent"><![CDATA[Peut éditer ses propres événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canDeleteEvent"><![CDATA[Peut déplacer ses propres événements à la poubelle]]></item>
+		<item name="wcf.acp.group.option.user.calendar.maxEventMessageLength"><![CDATA[Maximum Event-Description Length]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canDisableCommentFunction"><![CDATA[Peut désactiver les commentaires pour ses propres événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.maxEventMessageLength"><![CDATA[Longueur maximum de la description de l'événement]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canAddParticipant"><![CDATA[Peut ajouter et inviter d'autres personnes à ses propres événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canDownloadAttachment"><![CDATA[Peut télécharger des fichiers joints]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canViewAttachmentPreview"><![CDATA[Peut voir l'aperçu des fichiers joints]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canUploadAttachment"><![CDATA[Peut envoyer des fichiers joints]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canAddComment"><![CDATA[Peut commenter les événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canEditComment"><![CDATA[Peut éditer ses propres commentaires sur les événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canDeleteComment"><![CDATA[Peut supprimer ses propres commentaires sur les événements]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canSetEventColor"><![CDATA[Can set event color]]></item>
+		<item name="wcf.acp.group.option.user.calendar.canImportEvent"><![CDATA[Can import events]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canEditEvent"><![CDATA[Peut éditer les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canDeleteEvent"><![CDATA[Peut déplacer les événements à la poubelle]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canRestoreEvent"><![CDATA[Peut restaurer les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canDeleteEventCompletely"><![CDATA[Peut supprimer les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canModerateEvent"><![CDATA[Peut modérer les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canViewDeletedEvent"><![CDATA[Peut voir les événements supprimés]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canEditComment"><![CDATA[Peut éditer les commentaires sur les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canDeleteComment"><![CDATA[Pouvez supprimer les commentaires sur les événements]]></item>
+		<item name="wcf.acp.group.option.mod.calendar.canModerateComment"><![CDATA[Peut modérer les commentaires sur les événements]]></item>
+		<item name="wcf.acp.group.option.admin.calendar.canManageCategory"><![CDATA[Peut gérer des catégories]]></item>
+	</category>
+	
+	<category name="wcf.acp.index">
+		<item name="wcf.acp.index.system.software.calendarVersion"><![CDATA[Calendrier&trade; Version]]></item>
+	</category>
+	
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.calendar"><![CDATA[Calendrier]]></item>
+		<item name="wcf.acp.option.category.calendar.index"><![CDATA[Page principale]]></item>
+		<item name="wcf.acp.option.category.calendar.event"><![CDATA[Événements]]></item>
+		<item name="wcf.acp.option.category.dashboard.content.upcomingEvents"><![CDATA[Upcoming Events]]></item>
+		<item name="wcf.acp.option.category.dashboard.sidebar.featuredEvents"><![CDATA[Featured Events]]></item>
+		<item name="wcf.acp.option.category.dashboard.sidebar.upcomingEvents"><![CDATA[Upcoming Events]]></item>
+		<item name="wcf.acp.option.calendar_index_enable_stats"><![CDATA[Afficher les statistiques générales]]></item>
+		<item name="wcf.acp.option.calendar_index_enable_online_list"><![CDATA[Afficher la liste des “Utilisateurs en ligne”]]></item>
+		<item name="wcf.acp.option.calendar_index_enable_online_list"><![CDATA[Display “Users Online” list]]></item>
+		<item name="wcf.acp.option.calendar_message_sidebar_enable_user_events"><![CDATA[Afficher le nombre d'événements des auteurs]]></item>
+		<item name="wcf.acp.option.calendar_user_profile_enable_user_events"><![CDATA[Afficher le nombre d'événements dans le profil de l'utilisateur]]></item>
+		<item name="wcf.acp.option.calendar_max_event_length"><![CDATA[Période de temps maximum]]></item>
+		<item name="wcf.acp.option.calendar_max_event_length.description"><![CDATA[Le nombre maximum de jours consécutifs qu'un événement peut avoir lieu [en jours]]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_sidebar_featured_events_items"><![CDATA[Number of Events]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_sidebar_featured_events_items_period"><![CDATA[Time Period]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_sidebar_featured_events_items_period.description"><![CDATA[Show events within the given period of time only. [Time in days]]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_sidebar_upcoming_events_items"><![CDATA[Number of Events]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_upcoming_events_items"><![CDATA[Number of Events]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_upcoming_events_items_period"><![CDATA[Time Period]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_upcoming_events_items_period.description"><![CDATA[Show events within the given period of time only. [Time in days]]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_upcoming_events_items_categories"><![CDATA[Categories]]></item>
+		<item name="wcf.acp.option.calendar_dashboard_upcoming_events_items_categories.description"><![CDATA[Filters events by categories.]]></item>
+		<item name="wcf.acp.option.calendar_event_max_categories"><![CDATA[Maximum number of selected categories per event]]></item>
+		<item name="wcf.acp.option.calendar_event_empty_recycle_bin_cycle"><![CDATA[Prune Trash Bin]]></item>
+		<item name="wcf.acp.option.calendar_event_empty_recycle_bin_cycle.description"><![CDATA[Events within the trash bin will be removed after this period. [time in days, 0 to disable]]]></item>
+		<item name="wcf.acp.option.calendar_event_invite_group_max_size"><![CDATA[Maximum size of invitable user groups]]></item>
+		<item name="wcf.acp.option.calendar_event_invite_group_max_size.description"><![CDATA[Inviting user groups gets more expensive the more members they have, e.g. due to the amount of email notifications that require to be sent. You should make at most conservative changes to this value, otherwise the process can easily time out.]]></item>
+	</category>
+	
+	<category name="wcf.acp.rebuildData">
+		<item name="wcf.acp.rebuildData.com.woltlab.calendar.event"><![CDATA[Reconstruire les événements]]></item>
+		<item name="wcf.acp.rebuildData.com.woltlab.calendar.event.description"><![CDATA[Reconstruit l’index de recherche pour les événements et redistribue les points d'activité]]></item>
+		<item name="wcf.acp.rebuildData.com.woltlab.calendar.event.date"><![CDATA[Reconstruire les données d'événements]]></item>
+		<item name="wcf.acp.rebuildData.com.woltlab.calendar.event.date.description"><![CDATA[Reconstruit le compteur de données d’événements]]></item>
+	</category>
+	
+	<category name="wcf.acp.stat">
+		<item name="wcf.acp.stat.category.com.woltlab.calendar"><![CDATA[WoltLab Calendar]]></item>
+		<item name="wcf.acp.stat.com.woltlab.calendar.event"><![CDATA[Événements]]></item>
+		<item name="wcf.acp.stat.com.woltlab.calendar.eventDateComment"><![CDATA[Commentaires d’événements]]></item>
+	</category>
+	
+	<category name="wcf.dashboard">
+		<item name="wcf.dashboard.box.com.woltlab.calendar.featuredEvents"><![CDATA[Événements populaires]]></item>
+		<item name="wcf.dashboard.box.com.woltlab.calendar.tagCloud"><![CDATA[Mots-clés]]></item>
+		<item name="wcf.dashboard.box.com.woltlab.calendar.upcomingEvents"><![CDATA[Événements à venir]]></item>
+		<item name="wcf.dashboard.box.com.woltlab.calendar.content.upcomingEvents"><![CDATA[Événements à venir]]></item>
+		<item name="wcf.dashboard.objectType.com.woltlab.calendar.CalendarPage"><![CDATA[Page principale du calendrier]]></item>
+		<item name="wcf.dashboard.objectType.com.woltlab.calendar.EventListPage"><![CDATA[Liste d'événements]]></item>
+	</category>
+
+	<category name="wcf.like">
+		<item name="wcf.like.objectType.com.woltlab.calendar.likeableEvent"><![CDATA[Événement]]></item>
+		<item name="wcf.like.title.com.woltlab.calendar.eventDateComment"><![CDATA[{if $like->isDislike()}N’aime pas{else}Aime{/if} le commentaire {if $commentAuthor}<a href="{link controller='User' object=$commentAuthor}{/link}">de {$commentAuthor->username}</a>{else}d’un invité{/if} sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a>.]]></item>
+		<item name="wcf.like.title.com.woltlab.calendar.eventDateComment.response"><![CDATA[{if $like->isDislike()}N’aime pas{else}Aime{/if} la réponse {if $responseAuthor}<a href="{link controller='User' object=$responseAuthor}{/link}">de {$responseAuthor->username}</a>{else}d’un invité{/if} sur le commentaire {if $commentAuthor}<a href="{link controller='User' object=$commentAuthor}{/link}">de {$commentAuthor->username}</a>{else}d’un invité{/if} sur l’événement <a href="{link application='calendar' controller='Event' object=$eventDate}#comments{/link}">{$eventDate->getTitle()}</a>.]]></item>
+		<item name="wcf.like.title.com.woltlab.calendar.likeableEvent"><![CDATA[{if $like->isDislike()}N’aime pas{else}Aime{/if} l’événement <a href="{link application='calendar' controller='Event' object=$event->getFirstEventDate()}{/link}" class="calendarEventLink" data-event-date-id="{@$event->getFirstEventDate()->eventDateID}">{$event->getTitle()}</a>.]]></item>
+	</category>
+	
+	<category name="wcf.moderation">
+		<item name="wcf.moderation.type.com.woltlab.calendar.event"><![CDATA[Événement]]></item>
+		<item name="wcf.moderation.deletedContent.com.woltlab.calendar.event"><![CDATA[Événements supprimés]]></item>
+		<item name="wcf.moderation.deletedContent.objectType.com.woltlab.calendar.event"><![CDATA[Événements]]></item>
+	</category>
+	
+	<category name="wcf.page">
+		<item name="wcf.page.category.com.woltlab.calendar"><![CDATA[WoltLab Calendar]]></item>
+		<item name="wcf.page.com.woltlab.calendar.EventAddForm"><![CDATA[Ajouter un événement]]></item>
+		<item name="wcf.page.com.woltlab.calendar.EventEditForm"><![CDATA[Modifier un événement]]></item>
+		<item name="wcf.page.com.woltlab.calendar.EventImportForm"><![CDATA[Importer les événements]]></item>
+		<item name="wcf.page.com.woltlab.calendar.CalendarPage"><![CDATA[Calendrier]]></item>
+		<item name="wcf.page.com.woltlab.calendar.DailyPage"><![CDATA[Vue du jour]]></item>
+		<item name="wcf.page.com.woltlab.calendar.EventPage"><![CDATA[Événement]]></item>
+		<item name="wcf.page.com.woltlab.calendar.EventParticipationListPage"><![CDATA[Participation à l’événements]]></item>
+		<item name="wcf.page.com.woltlab.calendar.MapPage"><![CDATA[Carte]]></item>
+		<item name="wcf.page.com.woltlab.calendar.UpcomingEventListPage"><![CDATA[Événements à venir]]></item>
+		<item name="wcf.page.com.woltlab.calendar.WeeklyPage"><![CDATA[Vue de la semaine]]></item>
+		<item name="wcf.page.sitemap.calendar"><![CDATA[Calendrier]]></item>
+	</category>
+		
+	<category name="wcf.search">
+		<item name="wcf.search.type.com.woltlab.calendar.event"><![CDATA[Événements]]></item>
+		<item name="wcf.search.object.com.woltlab.calendar.event"><![CDATA[Événement]]></item>
+	</category>
+	
+	<category name="wcf.user">
+		<item name="wcf.user.activityPoint.objectType.com.woltlab.calendar.activityPointEvent.event"><![CDATA[Événements]]></item>
+	</category>
+	
+	<category name="wcf.tagging">
+		<item name="wcf.tagging.objectType.com.woltlab.calendar.event"><![CDATA[Événements]]></item>
+		<item name="wcf.tagging.taggedObjects.com.woltlab.calendar.event"><![CDATA[Événements avec le mot-clé avec “{$tag->name}”]]></item>
+	</category>
+	
+	<category name="wcf.user.condition">
+		<item name="wcf.user.condition.calendarEvents"><![CDATA[Événements]]></item>
+	</category>
+	<category name="wcf.user.notification">
+		<item name="wcf.user.notification.com.woltlab.calendar"><![CDATA[Calendrier]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.event.date.reminder"><![CDATA[Événement à venir dans une catégorie suivie]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.event.date.invite"><![CDATA[Invitation à l'événement]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.event.date.participation.newParticipant"><![CDATA[Nouveau participant à votre événement]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.eventDateComment.notification.comment"><![CDATA[Nouveau commentaire sur votre événement]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.eventDateComment.response.notification.commentResponse"><![CDATA[Nouvelle réponse à un commentaire sur votre événement]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.eventDateComment.response.notification.commentResponseOwner"><![CDATA[Nouvelle réponse à un commentaire sur votre événement]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.likeableEvent.notification.like"><![CDATA[Votre événement a été aimé]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.eventDateComment.like.notification.like"><![CDATA[Votre commentaire a été aimé]]></item>
+		<item name="wcf.user.notification.com.woltlab.calendar.eventDateComment.response.notification.commentResponseOwner"><![CDATA[Nouvelle réponse à votre commentaire]]></item>
+	</category>
+	
+	<category name="wcf.user.objectWatch">
+		<item name="wcf.user.objectWatch.subscribe.com.woltlab.calendar.category"><![CDATA[Suivre la catégorie]]></item>
+		<item name="wcf.user.objectWatch.enableNotification.com.woltlab.calendar.category"><![CDATA[Activer les notifications pour les événements à venir dans cette catégorie]]></item>
+		<item name="wcf.user.objectWatch.unsubscribe.com.woltlab.calendar.category"><![CDATA[Suivre la catégorie]]></item>
+	</category>
+	
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.calendarEventNotificationTime"><![CDATA[Rappel d’événement]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.description"><![CDATA[Sélectionnez cette option si vous souhaitez être informé des événements regardés à venir regardé.]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.3600"><![CDATA[Une heure plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.7200"><![CDATA[Deux heures plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.43200"><![CDATA[Douze heures plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.86400"><![CDATA[Un jour plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.172800"><![CDATA[Deux jours plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.604800"><![CDATA[Une semaine plus tôt]]></item>
+		<item name="wcf.user.option.calendarEventNotificationTime.2419200"><![CDATA[Quatre semaines plus tôt]]></item>
+		<item name="wcf.user.option.calendarShowBirthdays"><![CDATA[Anniversaires sur le calendrier]]></item>
+		<item name="wcf.user.option.calendarShowBirthdays.description"><![CDATA[Sélectionnez les anniversaires que vous souhaitez afficher.]]></item>
+		<item name="wcf.user.option.calendarShowBirthdays.everyone"><![CDATA[Tout le monde]]></item>
+		<item name="wcf.user.option.calendarShowBirthdays.following"><![CDATA[Utilisateurs que je suis]]></item>
+		<item name="wcf.user.option.calendarShowBirthdays.nobody"><![CDATA[Personne]]></item>
+	</category>
+	
+	<category name="wcf.user.recentActivity">
+		<item name="wcf.user.recentActivity.com.woltlab.calendar.recentActivityEvent.event"><![CDATA[Événement]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.calendar.likeableEvent.recentActivityEvent"><![CDATA[Aime (Événement)]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.calendar.eventDateComment.recentActivityEvent"><![CDATA[Commentaire (Événement)]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.calendar.eventDateComment.response.recentActivityEvent"><![CDATA[Réponse (Événement)]]></item>
+	</category>
+	
+</language>
