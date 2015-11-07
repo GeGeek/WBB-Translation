@@ -240,7 +240,7 @@
 		<item name="wbb.post.edit.trash"><![CDATA[Mettre à la corbeille]]></item>
 		<item name="wbb.post.edit.trash.confirmMessage"><![CDATA[Souhaitez-vous vraiment mettre ce message à la corbeille ?]]></item>
 		<item name="wbb.post.edit.trash.reason"><![CDATA[Motif (facultatif)]]></item>
-		<item name="wbb.post.editNote"><![CDATA[Message modifié {#$post->editCount} fois, dernière modification faite par “{if $post->editorID}<a href="{link controller='User' id=$post->editorID}{/link}" class="userLink" data-user-id="{@$post->editorID}">{$post->editor}</a>{else}{$post->editor}{/if}”{if $post->editReason}: {$post->editReason}{/if} ({@$post->lastEditTime|time}).]]></item>
+		<item name="wbb.post.editNote"><![CDATA[{if $post->editCount}Message modifié {#$post->editCount} fois, dernière modification par {if $post->editorID}<a href="{link controller='User' id=$post->editorID}{/link}" class="userLink" data-user-id="{@$post->editorID}">{$post->editor}</a>{else}{$post->editor}{/if}{if $post->editReason}: {$post->editReason}{/if} ({@$post->lastEditTime|time}).{/if}{if $thread->getBoard()->getModeratorPermission('canEditPost') && $post->hasOldVersions()}{if $post->editCount} — {/if}<a href="{link controller='EditHistory' objectType='com.woltlab.wbb.post' objectID=$post->postID}{/link}">Il y a des anciennes versions sauvegardées pour ce message</a>{/if}]]></item>
 		<item name="wbb.post.editReason"><![CDATA[Motif de la modification (facultatif)]]></item>
 		<item name="wbb.post.enableTime"><![CDATA[Date de publication]]></item>
 		<item name="wbb.post.enableTime.description"><![CDATA[Veuillez spécifier une date de publication, la discussion/le message restera désactivé(e) en attendant.]]></item>
@@ -292,12 +292,9 @@
 		<item name="wbb.post.option.disablePost.description"><![CDATA[Désactiver ce message après sa création.]]></item>
 		<item name="wbb.post.option.disableThread"><![CDATA[Désactiver la discussion]]></item>
 		<item name="wbb.post.option.disableThread.description"><![CDATA[Désactiver cette discussion après sa création.]]></item>
-		<item name="wbb.post.option.hideEditNote"><![CDATA[Ne pas afficher la note de modification]]></item>
-		<item name="wbb.post.option.hideEditNote.description"><![CDATA[La note de modification “Message modifié par ...” ne sera pas affichée.]]></item>
-		<item name="wbb.post.option.markAsDone"><![CDATA[Marquer comme résolue]]></item>
+		<item name="wbb.post.option.removeEditNote"><![CDATA[Ne pas afficher la note de modification]]></item>
+		<item name="wbb.post.option.removeEditNote.description"><![CDATA[La note de modification “Message modifié par ...” ne sera pas affichée.]]></item>		<item name="wbb.post.option.markAsDone"><![CDATA[Marquer comme résolue]]></item>
 		<item name="wbb.post.option.markAsDone.description"><![CDATA[Marquer la discussion comme résolue après ce message.]]></item>
-		<item name="wbb.post.option.removeEditNote"><![CDATA[Supprimer la note d’édition]]></item>
-		<item name="wbb.post.option.removeEditNote.description"><![CDATA[Supprime la note “Message édité par …”.]]></item>
 		<item name="wbb.post.option.showEditNote"><![CDATA[Afficher la note d’édition]]></item>
 		<item name="wbb.post.option.showEditNote.description"><![CDATA[Affiche la note “Message édité par …”.]]></item>
 		<item name="wbb.post.posts"><![CDATA[Messages]]></item>
