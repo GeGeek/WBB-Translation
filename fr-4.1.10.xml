@@ -924,7 +924,7 @@ Exemples pour la détection des ID de média:
 		<item name="wcf.acp.group.option.category.user.board.post"><![CDATA[Messages]]></item>
 		<item name="wcf.acp.group.option.category.user.board.thread"><![CDATA[Discussions]]></item>
 		<item name="wcf.acp.group.option.category.user.conversation"><![CDATA[Conversations]]></item>
-		<item name="wcf.acp.group.option.category.user.like"><![CDATA[Fonction Aime]]></item>
+		<item name="wcf.acp.group.option.category.user.like"><![CDATA[Fonction J’aime]]></item>
 		<item name="wcf.acp.group.option.category.user.message"><![CDATA[Messages]]></item>
 		<item name="wcf.acp.group.option.category.user.message.attachment"><![CDATA[Fichiers joints]]></item>
 		<item name="wcf.acp.group.option.category.user.message.comment"><![CDATA[Commentaires]]></item>
