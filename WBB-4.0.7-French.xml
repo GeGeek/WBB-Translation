@@ -2699,7 +2699,7 @@ Si vous ne souhaitez plus recevoir de courriel pour ce type de notification, vou
 		<item name="wbb.index.stats"><![CDATA[Statistiques]]></item>
 		<item name="wbb.index.stats.detail"><![CDATA[{#$stats[members]} membre{if $stats.members != 1}s{/if} - {#$stats[threads]} discussion{if $stats[threads] > 1}s{/if} - {#$stats[posts]} message{if $stats[posts] > 1}s{/if} ({#$stats[postsPerDay]} message{if $stats[postsPerDay] > 1}s{/if} par jour)
 		{if $stats[newestMember]}<br />Bienvenue à notre dernier membre: <a href="{link controller='User' object=$stats[newestMember]}{/link}" class="userLink" data-user-id="{@$stats[newestMember]->userID}">{$stats[newestMember]->username}</a>.{/if}]]></item>
-				<item name="wbb.index.copyright"><![CDATA[<a href="http://www.woltlab.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Propulsé par <strong>Burning Board&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, développé par <strong>WoltLab&reg; GmbH</strong>,</a><a href="http://www.woltlab.net"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>version FR par wNet</a>]]></item>
+				<item name="wbb.index.copyright"><![CDATA[<a href="http://www.woltlab.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Propulsé par <strong>Burning Board&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, développé par <strong>WoltLab&reg; GmbH</strong></a>, <a href="https://christophe.asselindebeauville.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>version <strong>FR</strong> par Chris</a>]]></item>
 		<item name="wbb.index.news"><![CDATA[Nouveautés]]></item>
 	</category>
 	
