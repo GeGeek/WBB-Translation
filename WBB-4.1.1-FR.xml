@@ -203,7 +203,7 @@
 		<item name="wbb.header.menu.board.watchedThreads"><![CDATA[Discussions suivies]]></item>
 	</category>
 	<category name="wbb.index">
-		<item name="wbb.index.copyright"><![CDATA[<a href="http://www.woltlab.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Propulsé par <strong>Burning Board&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, développé par <strong>WoltLab&reg; GmbH</strong></a>]]></item>
+		<item name="wbb.index.copyright"><![CDATA[<a href="http://www.woltlab.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Propulsé par <strong>Burning Board&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, développé par <strong>WoltLab&reg; GmbH</strong></a>, <a href="https://christophe.asselindebeauville.com"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>version <strong>FR</strong> par Chris</a>]]></item>
 		<item name="wbb.index.ignoreBoards"><![CDATA[Forums (In)Actifs]]></item>
 		<item name="wbb.index.markAsRead"><![CDATA[Marquer tous les forums comme lus]]></item>
 		<item name="wbb.index.news"><![CDATA[Nouveautés]]></item>
